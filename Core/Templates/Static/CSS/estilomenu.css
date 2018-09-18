@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.menu{
+    display: flex; 
+    justify-content: space-around;
+    background-color:black; 
+    text-align: center;  
+    width: 100%; 
+}
+
+.intcont{
+    width: 100px;
+    height: 30px; 
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+    text-decoration: none; 
+    color:white; 
+}
+
+.ops{
+    color:white; 
+    text-decoration: none; 
+    font-family: Tahoma, Geneva, sans-serif;
+
+}
+
+.ops a{
+    color:white; 
+    text-decoration: none; 
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.submenu{
+    display:none;
+}
+
+.submenu a:hover{
+    display:block;
+    color: white;
+}
+
+.intcont a:hover, .ops{
+    color: white;
+    text-decoration: none;
+}
+
+ .ops a:hover, .submenu{
+    display: block;
+    
+}
+
+.ops a:hover, .submenu a{
+    color: white;
+    text-decoration: none;
+}
+
+.bem{
+    color:#0072bc;
+}

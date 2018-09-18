@@ -1,0 +1,158 @@
+/*EStilo DO CORPO DA PAGINA */
+
+body{
+	background-color:#DCDCDC;
+}
+
+/* ESTILO PARA FORMULARIOS*/
+
+form{
+	width: 100%;
+	margin: auto;	
+}
+
+
+input{
+	font-family:sans-serif;
+	font-size: 12pt;
+	font-weight:normal;
+	background-color: #E2DDF0;
+}
+
+input:hover{
+		background-color: #dddddd;
+}
+
+fcontato{
+	background-color: #c3c3c2;
+}
+
+legend{
+	color:#004D80;
+	font-weight: bold;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+
+fieldset{
+	border-color: #0072bc;
+	margin:20px;
+	background-color: #fff;
+	padding-left: 8%;
+	padding-right: 8%;
+	
+}
+fieldset#sexo{
+	width:150px;
+}
+
+.formulario{
+	margin-top:-20px;
+	background:#fff;
+}
+
+
+/*ESTILO TEXTO*/
+h1{
+	text-align: center;
+	font-size:22pt;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+h2{
+	text-align: center;
+	font-size:17pt;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+h2#ult{
+	color:pink;
+	text-align: center;
+	font-size:20pt;
+	font-family: sans-serif;
+}
+
+h2#subsubtit{
+	color:#0072bc;
+	text-align: center;
+	font-size:17pt;
+	font-family: sans-serif;
+}
+
+h3{
+	color:#000;
+	text-align: center;
+	font-size:14pt;
+	font-family: sans-serif;
+}
+
+/*ESTILO CABEÇALHO*/
+
+.cabecalho{
+	background: #0072bc;
+	margin-top:0px;
+	
+}
+
+
+/*ESTILO BOTÃO*/
+
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#0cabf5 0%,
+		#00577f);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#0cabf5),
+		to(#00577f));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #ebf0e8;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+button{
+	margin-bottom:2%;
+	padding-left:25%;
+}
+
+.CadFunc-Botao{
+	margin-left:20px;
+}
+
+/*ESTILO DIV'S'*/
+
+.RelClient-pendencias{
+	text-align: center;
+	font-size:14pt;
+	font-family: sans-serif;
+	color:#000;
+	background-color: #E2DDF0;
+}
+
+.RelClient-ultimosservicos{
+	background: #fff;
+	margin-top:-20px;
+	text-align: center;
+	font-size:14pt;
+	font-family: sans-serif;
+}

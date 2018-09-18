@@ -1,0 +1,170 @@
+﻿.tudo{
+	background-color:gray;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.viagem{
+	display: flex; 
+	justify-content: space-around;
+	background-color: white; 
+	text-align: center;  
+	width: 100%;
+}
+.calculos{
+	display: flex; 
+	justify-content: space-around;
+	background-color: white; 
+	text-align: center;  
+	width: 100%;
+}
+
+#ordem{
+	background-color:white; 
+	width: 70px; 
+	height: 40px; 
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+}
+#dt_abastecimento{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;
+}
+#km_rodado{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+}
+#litros{
+	background-color:white; 
+	width: 50px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;	
+	font-size: 14px;
+}
+#valor_p_litros{
+	background-color:white; 
+	width: 90px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;	
+}
+#valor_total{
+	background-color:white; 
+	width: 110px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;	
+	font-size: 14px;
+}
+#dt_pgto_nika{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;	
+}
+#data{
+	background-color:white; 
+	width: 110px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+}
+#romaneio{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;	
+}
+#cte_nika{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 15px;
+	font-size: 14px;	
+}
+#cte_cliente{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 15px;
+	font-size: 14px;
+}
+#frete_c_pedagio{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 15px;
+	font-size: 14px;
+}
+#frete_s_pedagio{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 10px;
+	font-size: 14px;
+}
+#comissao{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;	
+	font-size: 14px;
+}
+#pgtos_efetuados{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 20px;	
+	font-size: 14px;
+}
+#data_pgtos{
+	background-color:white; 
+	width: 100px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+}
+#percurso{
+	background-color:white; 
+	width: 75px; 
+	height: 30px; 
+	text-align: center;
+	margin-top: 30px;	
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+.caixa{
+	  position: absolute;
+  top: 33%;
+  left: 37%;
+  width: 25%;
+  border-radius: 10px;
+  background: #1E90FF;
+  min-height: 200px;
+  overflow: hidden;
+}
+.tudo{
+	background-color: gray
+}
+.logo{
+	justify-content: center;
+  display: flex;
+}
+.campos{
+  margin-left: 135px;
+  margin-top: -20px;
+}
+.user{
+  justify-content: center;
+  display: flex;
+  margin-top:45px;
+  margin-left: -190px;
+}
+.senha{
+  justify-content: center;
+  display: flex;
+  margin-left: -190px;
+}
+.check{
+  margin-left: 85px;
+}
+.botao{
+  margin-left: 250px;
+}
