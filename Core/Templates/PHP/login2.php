@@ -9,14 +9,6 @@
     $hostname ="";
     /*$con = mssql_connect ($hostname,$usuario,$senha) or die (mssql_error());
     mssql_select_db($banco,$con) or die (mssql_error());*/
-?>
-
-<html>
-<head>
-	<title>autenticando usuario</title>
-</head>
-<body>
-<?php
     
     $l = $_POST ['login'];
     $s = $_POST ['senha'];
@@ -30,8 +22,7 @@
             header('Location: inicial.php');
     	}else{
             header('Location: index.html');
-    	}
+        }
+        header('Location: inicial.php');
 ?>
 
-</body>
-</html>

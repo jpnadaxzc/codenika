@@ -5,21 +5,21 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 {
     unset($_SESSION['login']);
     unset($_SESSION['senha']);
-    header('location:index.html');
+   // header('location:index.html');
     }
  
-$logado = $_SESSION['login'];
+//$logado = $_SESSION['login'];
 ?>
 <html>
 <head>
 	<title>NIKA -transpostes</title>
 	<meta charset="utf-8">
   <!-- separar css do html -->
-	<link rel="stylesheet" href="estiloindex.css" type="text/css">
+	
 	<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../Static/js/jquery.min.js"></script>
+  <script src="../Static/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: grey">
 				<div style="display: flex;">
@@ -30,7 +30,7 @@ $logado = $_SESSION['login'];
 						</div>
 						<div class="intcont">
 							<?php
-								echo "<span class='bem' >Bem vindo! $logado</span>";
+								//echo "<span class='bem' >Bem vindo! $logado</span>";
 							?>
 						</div>
 						<div class="intcont">
@@ -55,7 +55,7 @@ $logado = $_SESSION['login'];
         </div>'
 	<div style="display: flex;" >
 	<?php 
-		SESSION_START();
+		//SESSION_START();
 	/*if ($_session['poder'] ==1) {	*/
 	?>
 	<div style="display: flex;" >
