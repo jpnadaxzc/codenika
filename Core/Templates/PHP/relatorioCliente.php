@@ -6,30 +6,57 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 			<link rel="stylesheet" type="text/css" href="../Static/CSS/cssPadrao.css">
 			<link rel="sortcut icon" href="imagem/logo2.png" type="image/png"/>	
+			<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
+  			<link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
 		</head>
 		<body>
 			<div class="interface">
-				<header>
-					<div class = "Menu">
-						<div style="display: flex; justify-content: space-around;background-color:black; text-align: center;  width: 100%; ">
-							<div>
-								<img src="https://github.com/isasmartins/logo/blob/master/logo2.png?raw=true"></img>
-							</div>
-							<div  style=" width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-								<a href="javascript:void(0)" style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Administração<a>
-							</div>
-							<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-								<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Financeiro<a>
-							</div>
-							<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-								<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Entregas<a>
-							</div>
-							<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-								<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Gestão<a>
-							</div>
-						</div>
+					<!-- 
+		=================
+		INICIO DO MENU
+		=================
+		-->
+		<div style="display: flex;">
+			<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
+				<div>
+					<img class="logo1" src="../img/logo2.png" alt="logo_nika"/>
+					<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
+				</div>
+				<div class="row">
+					<div class="intcont">
+						<?php
+							echo "<span class='bem' >Bem vindo! Vinicius";
+							$logado;
+							echo "</span>";
+						?>
 					</div>
-				</header>
+					<div class="menu-container">
+						<ul class="menu clearfix">
+							<li><a href="#">Administração</a>
+								<ul class="sub-menu clearfix">
+									<li><a href="#">Cadastro</a>
+									<li><a href="#">Relatorios</a>
+										<ul class="sub-menu">
+											<li><a href="relatorioViagem.php">Viagem</a></li>
+											<li><a href="relatorioMotorista.php">Motorista</a></li>
+											<li><a href="relatorioCliente.php">Cliente</a></li>
+										</ul>
+									</li>
+								</ul><!-- submenu -->
+							</li>
+							<li><a href="#">Financeiro</a>
+							<li><a href="#">Entregas</a>
+							<li><a href="#">Gestão</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 
+			=================
+			FIM DO MENU
+			=================
+		-->
 				
 				<div class="cabecalho">
 					<br/>

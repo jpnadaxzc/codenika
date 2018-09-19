@@ -2,31 +2,58 @@
 <html>
 <head>
 <title>Relatório Viagem</title>
-<link rel="stylesheet" type="text/css" href="Estilo_relatorio_viagens.css">
+	<link rel="stylesheet"  href="../Static/CSS/Estilo_relatorio_viagens.css">
+	<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
+  	<link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body class="tudo">
 	
-	<div>
-		<!--Menu-->
-		<div style="display: flex; justify-content: space-around;background-color:black; text-align: center;  width: 100%; ">
+	<!-- 
+		=================
+		INICIO DO MENU
+		=================
+	-->
+	<div style="display: flex;">
+		<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
 			<div>
-				<img src="../img/logo2.png" alt="logo_nika"/>     <!--Pra quando subir
-				<img src="logo2.png" alt="logo_nika"/>     				Pra quando estiver editando-->
+				<img class="logo1" src="../img/logo2.png" alt="logo_nika"/>
+				<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
 			</div>
-			<div  style=" width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-				<a href="javascript:void(0)" style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Administração<a>
-			</div>
-			<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-				<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Financeiro<a>
-			</div>
-			<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-				<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Entregas<a>
-			</div>
-			<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-				<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Gestão<a>
+			<div class="row">
+				<div class="intcont">
+					<?php
+						echo "<span class='bem' >Bem vindo! Vinicius";
+						$logado;
+						echo "</span>";
+					?>
+				</div>
+				<div class="menu-container">
+					<ul class="menu clearfix">
+						<li><a href="#">Administração</a>
+							<ul class="sub-menu clearfix">
+								<li><a href="#">Cadastro</a>
+								<li><a href="#">Relatorios</a>
+									<ul class="sub-menu">
+										<li><a href="relatorioViagem.php">Viagem</a></li>
+										<li><a href="relatorioMotorista.php">Motorista</a></li>
+										<li><a href="relatorioCliente.php">Cliente</a></li>
+									</ul>
+								</li>
+							</ul><!-- submenu -->
+						</li>
+						<li><a href="#">Financeiro</a>
+						<li><a href="#">Entregas</a>
+						<li><a href="#">Gestão</a>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+	<!-- 
+		=================
+		FIM DO MENU
+		=================
+	-->
 		<br/>
 		
 		

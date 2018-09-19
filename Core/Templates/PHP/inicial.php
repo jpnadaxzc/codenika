@@ -14,50 +14,61 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 <head>
 	<title>NIKA -transpostes</title>
 	<meta charset="utf-8">
-  <!-- separar css do html -->
-	
 	<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
   <link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
-  <script src="../Static/js/jquery.min.js"></script>
-  <script src="../Static/bootstrap/dist/js/bootstrap.min.js"></script>
+	
 </head>
 <body style="background-color: grey">
-				<div style="display: flex;">
-					<div style="display: flex; justify-content: space-around;background-color:black; text-align: center;  width: 100%; ">
-						<div>
-							<img src="../img/logo2.png" alt="logo_nika"/>
-							<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
-						</div>
-						<div class="intcont">
-							<?php
-								//echo "<span class='bem' >Bem vindo! $logado</span>";
-							?>
-						</div>
-						<div class="intcont">
-							<div class="ops" >
-								<a href="javascript:void(0)" >Administração<a>
-							</div>
-							<div class="submenu">
-								<a href="javascript:void(0)">Cadastro</a>
-								<a href="javascript:void(0)">Relatorios</a>
-							</div>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Financeiro<a>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Entregas<a>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Gestão<a>
-						</div>
-					</div>
-        </div>'
+	<!-- 
+		=================
+		INICIO DO MENU
+		=================
+	-->
+	<div style="display: flex;">
+		<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
+			<div>
+				<img class="logo1" src="../img/logo2.png" alt="logo_nika"/>
+				<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
+			</div>
+			<div class="row">
+				<div class="intcont">
+					<?php
+						echo "<span class='bem' >Bem vindo! Vinicius";
+						$logado;
+						echo "</span>";
+					?>
+				</div>
+				<div class="menu-container">
+						<ul class="menu clearfix">
+								<li><a href="#">Administração</a>
+										<ul class="sub-menu clearfix">
+												<li><a href="#">Cadastro</a>
+												<li><a href="#">Relatorios</a>
+													<ul class="sub-menu">
+														<li><a href="relatorioViagem.php">Viagem</a></li>
+														<li><a href="relatorioMotorista.php">Motorista</a></li>
+														<li><a href="relatorioCliente.php">Cliente</a></li>
+													</ul>
+										</ul><!-- submenu -->
+								</li>
+								<li><a href="#">Financeiro</a>
+								<li><a href="#">Entregas</a>
+								<li><a href="#">Gestão</a>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 
+		=================
+		FIM DO MENU
+		=================
+	-->
 	<div style="display: flex;" >
-	<?php 
-		//SESSION_START();
-	/*if ($_session['poder'] ==1) {	*/
-	?>
+		<?php 
+			//SESSION_START();
+		/*if ($_session['poder'] ==1) {	*/
+		?>
 	<div style="display: flex;" >
 		<div style="background-color: #0072bc;width:300px;height:300px;margin-top: 10px;">
 				
@@ -66,17 +77,17 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 	/*	};*/
 	?>
 
-		<div class="container">
+		<!-- <div class="container">
 		  <h2 style="font-family: Tahoma, Geneva, sans-serif">Lembretes do mês</h2>
 		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-		    <!-- Indicators -->
+		   
 		    <ol class="carousel-indicators">
 		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		      <li data-target="#myCarousel" data-slide-to="1"></li>
 		      <li data-target="#myCarousel" data-slide-to="2"></li>
 		    </ol>
 
-		    <!-- Wrapper for slides -->
+		   
 		    <div class="carousel-inner">
 
 		      <div class="item active">
@@ -105,7 +116,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 		  
 		    </div>
 
-		    <!-- Left and right controls -->
+		    
 		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 		      <span class="glyphicon glyphicon-chevron-left"></span>
 		      <span class="sr-only">Previous</span>
@@ -115,7 +126,10 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 		      <span class="sr-only">Next</span>
 		    </a>
 		  </div>
-		</div>
+		</div> -->
 	<div>
 </body>
 </html>
+
+<script src="../Static/js/jquery.min.js"></script>
+<script src="../Static/bootstrap/dist/js/bootstrap.min.js"></script>
