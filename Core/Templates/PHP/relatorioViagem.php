@@ -48,7 +48,7 @@
 				</div>
 				<div class="menu-container">
 					<ul class="menu clearfix">
-						<li><a href="#">Nova viagem</a></li>
+						<li><a href="novaViagem.php">Nova viagem</a></li>
 						<li><a href="#">Administração</a>
 							<ul class="sub-menu clearfix">
 								<li><a href="#">Cadastro</a>
