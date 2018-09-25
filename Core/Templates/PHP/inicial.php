@@ -27,7 +27,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 	<div style="display: flex;">
 		<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
 			<div>
-				<img class="logo1" src="../img/logo2.png" alt="logo_nika"/>
+			<a href="inicial.php"><img class="logo1" src="../img/logo2.png" alt="logo_nika"/></a>
 				<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
 			</div>
 			<div class="row">
@@ -40,6 +40,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 				</div>
 				<div class="menu-container">
 						<ul class="menu clearfix">
+							<li><a href="#">Nova viagem</a></li>
 								<li><a href="#">Administração</a>
 										<ul class="sub-menu clearfix">
 												<li><a href="#">Cadastro</a>

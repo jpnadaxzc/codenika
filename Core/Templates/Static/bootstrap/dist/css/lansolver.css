@@ -1,0 +1,17 @@
+.bgcolorlan{background-color: #02264A!important; color:white;}
+.btn-success{background-color: #02264A!important;}
+.colortextLan{color:#02264A!important;}
+.img-rel{
+    background-image: url("../img/data-presentation.png");
+    background-position: center center;
+}
+
+.iconMais{
+    margin-top: 23px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.txt-color-w{
+   color:white;
+}

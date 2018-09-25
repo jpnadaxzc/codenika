@@ -1,0 +1,11 @@
+#bnt-buscar {
+    display: inline;
+    float: right;
+    margin-top: 8px;
+    height: 35px;
+    width: 120px;
+}
+
+.row {
+    margin-top: 4px;
+}
