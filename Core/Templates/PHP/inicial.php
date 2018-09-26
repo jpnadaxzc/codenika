@@ -45,6 +45,9 @@ $logado = $_SESSION['login'];
 								<li><a href="#">Administração</a>
 										<ul class="sub-menu clearfix">
 												<li><a href="#">Cadastro</a>
+													<ul class="sub-menu">
+														<li><a href="Cadastro_cliente.php">Clientes</a></li>
+													</ul>
 												<li><a href="#">Relatorios</a>
 													<ul class="sub-menu">
 														<li><a href="relatorio_viagem.php">Viagem</a></li>

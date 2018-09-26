@@ -1,0 +1,44 @@
+﻿.botoes{
+	display:flex;
+	justify-content:between;
+	margin-top:20px;
+}
+.container{
+	display:flex;
+	justify-content:center;
+	width:600px;
+	height:500px;
+	background-color:white;
+	border-radius: 8px;
+	
+}
+form{
+	margin-top:20px;
+}
+.tudo{
+	background-color:gray;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+.cont-pai{
+	display:flex;
+	justify-content:center;
+}
+
+.botao{
+	background-color:#4169E1;
+	border-color:#4169E1;
+	border-radius:8px;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+.inputs{
+	margin-left:135px;
+	margin-top:-18px;
+}
+.textarea{
+	vertical-align: top;
+	height: 80px;
+	width: 305px;
+    resize: vertical;
+}
