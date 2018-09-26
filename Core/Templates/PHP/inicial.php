@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+
 <?php
 session_start();
 if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
 {
     unset($_SESSION['login']);
     unset($_SESSION['senha']);
-   // header('location:index.html');
+    header('location:index.html');
     }
  
-//$logado = $_SESSION['login'];
+$logado = $_SESSION['login'];
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>NIKA -transpostes</title>
@@ -46,7 +47,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 												<li><a href="#">Cadastro</a>
 												<li><a href="#">Relatorios</a>
 													<ul class="sub-menu">
-														<li><a href="relatorioViagem.php">Viagem</a></li>
+														<li><a href="relatorio_viagem.php">Viagem</a></li>
 														<li><a href="relatorioMotorista.php">Motorista</a></li>
 														<li><a href="relatorioCliente.php">Cliente</a></li>
 													</ul>

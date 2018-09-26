@@ -1,29 +1,24 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	
+	include_once 'conexao.php';
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Relatório Viagem</title>
 	<link rel="stylesheet"  href="../Static/CSS/Estilo_relatorio_viagens.css">
 	<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
   	<link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/jquery.dataTables.css">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/dataTables.bootstrap.css">
-	<link href="../Static/bootstrap/dist/CSS/buttons.bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/dataTables.bootstrap4.css">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/dataTables.foundation.min.css">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/dataTables.jqueryui.min.css">
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/dataTables.semanticui.min.css">
-	
-	<link rel="stylesheet" href="../Static/bootstrap/dist/CSS/jquery.dataTables.min.css">
-
-	
-        
-	<link href="../Static/bootstrap/dist/CSS/fixedHeader.bootstrap.min.css" rel="stylesheet">
-	<link href="../Static/bootstrap/dist/CSS/responsive.bootstrap.min.css" rel="stylesheet">
-	<link href="../Static/bootstrap/dist/CSS/scroller.bootstrap.min.css" rel="stylesheet">
-	
-	<link href="https://cdn.datatables.net/fixedcolumns/3.2.6/css/fixedColumns.dataTables.min.css" rel="stylesheet">
-        
-
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/jquery.dataTables.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/buttons.bootstrap.min.css" >
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/dataTables.bootstrap4.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/dataTables.foundation.min.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/dataTables.jqueryui.min.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/dataTables.semanticui.min.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/responsive.bootstrap.min.css" >
+	<link rel="stylesheet" href="../Static/bootstrap/dist/css/scroller.bootstrap.min.css" >
 </head>
 <body class="tudo">
 	
@@ -36,15 +31,14 @@
 		<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
 			<div>
 				<a href="inicial.php"><img class="logo1" src="../img/logo2.png" alt="logo_nika"/></a>
-				<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
 			</div>
 			<div class="row">
 				<div class="intcont">
-					<?php
-						echo "<span class='bem' >Bem vindo! Vinicius";
-						//$logado;
-						echo "</span>";
-					?>
+					<span class='bem' >Bem vindo! 
+						<?php
+							echo	$logado;
+						?>
+					</span>
 				</div>
 				<div class="menu-container">
 					<ul class="menu clearfix">
@@ -54,7 +48,7 @@
 								<li><a href="#">Cadastro</a>
 								<li><a href="#">Relatorios</a>
 									<ul class="sub-menu">
-										<li><a href="relatorioViagem.php">Viagem</a></li>
+										<li><a href="relatorio_viagem.php">Viagem</a></li>
 										<li><a href="relatorioMotorista.php">Motorista</a></li>
 										<li><a href="relatorioCliente.php">Cliente</a></li>
 									</ul>
@@ -75,7 +69,36 @@
 		=================
 	-->
 		<br/>
-		
+		<br/>
+		<br/>
+		<div class="cont">
+			<div>
+				<spam class="legenda" style="text-decoration: none;font-size: 20px;color: black">Motorista:</spam>
+			</div>
+			<div>
+				<select class="select" id="motorista">
+					<option value="" class="option">selecione o motorista</option>
+					<?php 
+						$select_mot = 'select * from motorista';
+						$select_mot_query = mysqli_query($con,$select_mot);
+						$num_row = mysqli_num_rows($select_mot_query);
+
+						if ($num_row > 0){
+						$row = mysqli_fetch_array($select_mot_query);
+							echo "<option value='{$row[0]}'>{$row[1]}</option>";
+						};
+						
+					?>
+				</select>
+				
+				<div class="botao">
+						<input type="button" name="buscar" onclick="javascript: validabusca()" value="Buscar">
+				</div>
+			</div>
+			<div>
+				<span style="color:red; margin-top:10px; margin-left:10px; display:none" id="alerta">Selecione o motorista!!</span>
+			</div>
+		</div>
 		
 		<!--Relatório viagem-->
 		<div class="x_panel">
@@ -105,56 +128,21 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-							</tr>
-							<tr>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
-								<th>Teste</th>
+							<tr id="retajax">
+
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>	
 		</div>
+		<div id="gif"></div>
 
 </body>
 
 </html>
 <script src="../Static/js/jquery.min.js"></script>
 <script src="../Static/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/fixedcolumns/3.2.6/js/dataTables.fixedColumns.min.js"></script>
 <script src="../Static/js/dataTables.bootstrap.min.js"></script>
 <script src="../Static/js/dataTables.buttons.min.js"></script>
 <script src="../Static/js/dataTables.fixedHeader.min.js"></script>
@@ -198,6 +186,40 @@
                 }
             });
         }); 
-        
-            
-    </script>
+
+var id_mot
+function busca(){
+id_mot = document.getElementById('motorista').value;
+
+//$("#retajax").html("<img src='../img/loading.gif' width= '5%' class='gif' >")	
+
+$.ajax({
+	type: "POST",
+	url: "pesquisaformulario.php",
+	data:{id_mot:id_mot},
+	success: function(html){
+		
+		$("#retajax").html(html)
+	},
+	error:function(request, status, erro){
+		console.log(html);
+
+	}
+	
+})
+}
+
+function validabusca(){
+id_mot = document.getElementById('motorista').value;
+if(id_mot == ''){
+	document.getElementById('motorista').focus();
+	document.getElementById('alerta').style.display = "block";
+}else{
+	document.getElementById('alerta').style.display = "none";
+	busca();
+}
+}
+
+
+
+</script>
