@@ -15,8 +15,8 @@ $logado = $_SESSION['login'];
 <head>
 	<title>NIKA -transpostes</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../Static/CSS/estilomenu.css" type="text/css">
-  <link rel="stylesheet" href="../Static/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Static/CSS/estilomenu.css" type="text/css">
+  <link rel="stylesheet" href="Static/bootstrap/dist/css/bootstrap.min.css">
 	
 </head>
 <body style="background-color: grey">
@@ -28,7 +28,7 @@ $logado = $_SESSION['login'];
 	<div style="display: flex;">
 		<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
 			<div>
-			<a href="inicial.php"><img class="logo1" src="../img/logo2.png" alt="logo_nika"/></a>
+			<a href="inicial.php"><img class="logo1" src="img/logo2.png" alt="logo_nika"/></a>
 				<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
 			</div>
 			<div class="row">
@@ -133,5 +133,5 @@ $logado = $_SESSION['login'];
 </body>
 </html>
 
-<script src="../Static/js/jquery.min.js"></script>
-<script src="../Static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="Static/js/jquery.min.js"></script>
+<script src="Static/bootstrap/dist/js/bootstrap.min.js"></script>
