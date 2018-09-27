@@ -61,35 +61,48 @@
 	
 	
 <br/>
-<div class="cont-pai">
-<div class="container">
-	<form action="Novo cliente" method="post">
-		<div>	<label for="nome">Nome:</label></div>
-				<div class="inputs"><input class="campo" type="text" id="nome_cliente"/></div>	
-				
-		<div>	<label for="rg">RG:</label></div>
-				<div class="inputs"><input class="campo" type="number" id="rg"/></div>
-		
-		<div>	<label for="endereço">Endereço:</label></div>
-				<div class="inputs"><input class="campo" type="text" id="endereco"/></div>	
-		
-		<div>	<label for="numero_casa">N°:</label></div>
-				<div class="inputs"><input class="campo" type="number" id="numero_casa"/></div>	
-			
-		<div>	<label for="bairro">Bairro:</label></div>
-				<div class="inputs"><input class="campo" type="text" id="bairro"/></div>	
-			
-		<div>	<label for="cep">CEP:</label></div>
-				<div class="inputs"><input class="campo" type="text" id="cep"/></div>	
-			
-		<div>	<label for="bloco">Bloco:</label></div>
-				<div class="inputs"><input class="campo" type="text" id="bloco"/></div>	
-			
-		<div>	<label for="apartamento">Apartamento:</label></div>
-				<div class="inputs"><input class="campo" type="number" id="ap"/></div>
-	
-				Estado:
-				<div class="inputs"><select class="campo" name="estado"></div>
+<div class='panel-body'>
+	<div class="row">
+		<form action="Novo cliente" method="post">
+			<div class="col-md-4">	
+				<label for="nome">Nome:</label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="nome_cliente"/>
+			</div>
+			<div class="col-md-4">	
+				<label for="rg">RG:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="rg"/>
+			</div>
+			<div class=" col-md-4">	
+				<label for="endereço">CPF/CNPJ:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="endereco"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="endereço">Endereço:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="endereco"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="numero_casa">N°:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="numero_casa"/>
+			</div>
+			<div class=" col-md-4">	
+				<label for="bairro">Bairro:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="bairro"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="cep">CEP:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="cep"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="bloco">Bloco:</label>
+				<input class="form-control" type="text" id="bloco"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="apartamento">Apartamento:</label>
+				<input class="form-control" type="number" id="ap"/>
+			</div>
+			<div class=" col-md-4">
+				<label for="apartamento">Estado:</label></label><span style="color:red;">*</span>
+				<select class="form-control" name="estado"></div>
 					<option value="selecione">Selecione...</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
@@ -118,31 +131,38 @@
 					<option value="SP">São Paulo</option>
 					<option value="SE">Sergipe</option>
 					<option value="TO">Tocantins</option>
-				</select></div>
-		
-		<div>	<label for="email">Email:</label></div>
-				<div class="inputs"><input class="campo" type="email" id="email"/></div>	
-		
-		<div>	<label for="telefone">Telefone:</label></div>
-				<div class="inputs"><input class="campo" type="number" id="telefone"/></div>
-			
-		<div>	<label for="telefone_comercial" style="font-size:15px;">Telefone Comercial:</label>
-				<div class="inputs"><input class="campo" type="number" id="telefone_comercial"/></div>
-			
-		<div>	<label for="celular">Celular:</label></div>
-				<div class="inputs"><input class="campo" type="number" id="celular"/></div>
-		
-		<div>	<label for="site_cliente">Site:</label></div>
-			<div class="inputs"><input class="campo" type="url" id="site_cliente"/></div>
-				
-		<div>	<label for="obervacoes">Observações</label></div>
-			<div>	<textarea class="textarea" id="obervacoes"></textarea></div>	
-		<div class="botoes">
-			<div ><input class="botao" type="button" name="botao-Cadastrar" value="Cadastrar"></div>	
-			<div ><input class="botao" type="button" name="botao-Cancelar" value="Cancelar"></div>				
+				</select>
+			</div>
+			<div class=" col-md-4">	
+				<label for="email">Email:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="email"/>
+			</div>	
+			<div class=" col-md-4">	
+				<label for="telefone">Telefone:</label></label><span style="color:red;">*</span>
+				<input class="form-control" type="text" id="telefone"/>
+			</div>
+			<div class=" col-md-4">	
+				<label for="telefone_comercial" style="font-size:15px;">Telefone Comercial:</label>
+				<input class="form-control" type="text" id="telefone_comercial"/>
+			</div>
+			<div class=" col-md-4">	
+				<label for="celular">Celular:</label>
+				<input class="form-control" type="text" id="celular"/>
+			</div>
+			<div class=" col-md-4">	
+				<label for="site_cliente">Site:</label>
+				<input class="form-control" type="url" id="site_cliente"/>
+			</div>
+			<div class="col-md-12">	
+				<label for="obervacoes">Observações</label>
+				<textarea class="textarea" id="obervacoes"></textarea>
+			</div>	
+			<div class="botoes">
+				<div ><input class="botao" type="button" name="botao-Cadastrar" value="Cadastrar"></div>	
+				<div ><input class="botao" type="button" name="botao-Cancelar" value="Cancelar"></div>				
+			</div>
+		</form>	
 		</div>
-	</form>	
-	</div>
 	</div>
 </body>
 </html>
