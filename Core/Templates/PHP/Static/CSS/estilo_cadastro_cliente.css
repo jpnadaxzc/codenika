@@ -25,11 +25,10 @@ form{
 	justify-content:center;
 }
 
-.botao{
-	background-color:#4169E1;
-	border-color:#4169E1;
-	border-radius:8px;
-	font-family: Tahoma, Geneva, sans-serif;
+.bot{
+	margin-top:25px;
+	background-color:#004D80 !important;
+	color:white !important;
 }
 
 .inputs{
@@ -41,4 +40,19 @@ form{
 	height: 80px;
 	width: 305px;
     resize: vertical;
+}
+
+.x_painel{
+	width: 90%;
+	margin-left: 5%;
+	background-color: white;
+	
+}
+
+.color{
+	color:red;
+}
+
+.esconde{
+	display: none;
 }

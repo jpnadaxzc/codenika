@@ -19,7 +19,7 @@ $logado = $_SESSION['login'];
   <link rel="stylesheet" href="Static/bootstrap/dist/css/bootstrap.min.css">
 	
 </head>
-<body style="background-color: grey">
+<body>
 	<!-- 
 		=================
 		INICIO DO MENU
