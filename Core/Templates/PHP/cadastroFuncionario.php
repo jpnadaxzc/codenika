@@ -6,40 +6,66 @@
 		<meta name="description" content="Formulario">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" type="text/css" href="../Static/CSS/cssPadrao.css">
+		<link rel="stylesheet" href="Static/CSS/estilomenu.css" type="text/css">
 		<link rel="sortcut icon" href="imagem/logo2.png" type="image/png"/>	
 	</head>
 
 	<body>
 		<div id="interface">
-			<header>
-				<!-- Menu -->
-				<div class = "Menu">
-			
-					<div style="display: flex; justify-content: space-around;background-color:black; text-align: center;  width: 100%; ">
-						<div>
-							<img src="https://github.com/isasmartins/logo/blob/master/logo2.png?raw=true"></img>
+			<!-- 
+			=================
+			INICIO DO MENU
+			=================
+			-->
+			<div style="display: flex;">
+				<div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
+					<div>
+					<a href="inicial.php"><img class="logo1" src="img/logo2.png" alt="logo_nika"/></a>
+						<!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
+					</div>
+					<div class="row">
+						<div class="intcont">
+							<?php
+								echo "<span class='bem' >Bem vindo! Vinicius";
+								$logado;
+								echo "</span>";
+							?>
 						</div>
-						<div  style=" width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)" style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Administração<a>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Financeiro<a>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Entregas<a>
-						</div>
-						<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
-							<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Gestão<a>
+						<div class="menu-container">
+								<ul class="menu clearfix">
+									<li><a href="novaViagem.php">Nova viagem</a></li>
+										<li><a href="#">Administração</a>
+												<ul class="sub-menu clearfix">
+														<li><a href="#">Cadastro</a>
+															<ul class="sub-menu">
+																<li><a href="cadastroFuncionario.php">Funcionarios</a></li>
+																<li><a href="Cadastro_cliente.php">Clientes</a></li>
+															</ul>
+														<li><a href="#">Relatorios</a>
+															<ul class="sub-menu">
+																<li><a href="relatorio_viagem.php">Viagem</a></li>
+																<li><a href="relatorioMotorista.php">Motorista</a></li>
+																<li><a href="relatorioCliente.php">Cliente</a></li>
+															</ul>
+												</ul><!-- submenu -->
+										</li>
+										<li><a href="#">Financeiro</a>
+										<li><a href="#">Entregas</a>
+										<li><a href="#">Gestão</a>
+								</ul>
 						</div>
 					</div>
 				</div>
-		
-			</header>
+			</div>
+			<!-- 
+				=================
+				FIM DO MENU
+				=================
+			-->
 			
 			<div class="cabecalho">
 				<br/>
 				<h1>Cadastro de Funcionário</h1>
-				<h2>Preencha corretamente os dados, sem esquecer nenhum campo<h2>
 				<br/>
 			</div>			
 		
