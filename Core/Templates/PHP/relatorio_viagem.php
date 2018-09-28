@@ -105,7 +105,7 @@
 		
 		<div class="row">
 			<div class="col-md-1"></div>
-			<div class="col-md-10" id="table">		
+			<div class="col-md-12" id="table">		
 				
 			</div>
 		</div>	
@@ -117,7 +117,7 @@
 
 
 function validabusca(){
-	$("#table").html("<img src='img/loading.gif' />")
+	$("#table").html("<img src='img/loading.gif' style='margin-left:40%' />")
 	var id_mot = $('#motorista').val();
 	if(id_mot == ''){
 		document.getElementById('motorista').focus();

@@ -259,6 +259,7 @@ function validaCliente(){
 }
 
 function salvacliente(){
+	$("#msg").html("<img src='img/loading.gif' style='margin-left:40%' />").focus();
 	var _nome = $('#nome_cliente').val();
 	var _rg = $('#rg').val();
 	var _cpf = $('#cpf').val();
@@ -284,12 +285,12 @@ function salvacliente(){
 		tel:_tel,telcom:_telcom,cel:_cel,site:_site,obs:_obs},
 		success: function(data){
 			console.log(data);
-			$('#msg').html(data);
+			$('#msg').html(data).focus();;
 		},
 		erro:function(data){
-			$('#msg').html('<div class="alert alert-danger"><strong>ERRO!</strong>'+data+'</div>');
+			$('#msg').html('<div class="alert alert-danger"><strong>ERRO!</strong>'+data+'</div>').focus();;
 		}
 	})
-	alert();
+	
 }
 </script>
