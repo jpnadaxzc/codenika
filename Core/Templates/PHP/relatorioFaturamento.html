@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Cadastro Motorista </title>
+		<meta name="description" content="Formulario">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="../Static/CSS/cssPadrao.css">
+	</head>
+<body>
+	<div id="interface">
+	<header>
+		<!-- Menu -->
+		<div class = "Menu">
+			<div style="display: flex; justify-content: space-around;background-color:black; text-align: center;  width: 100%; ">
+				<div>
+					<img src="https://github.com/isasmartins/logo/blob/master/logo2.png?raw=true"></img>
+				</div>
+				<div  style=" width: 100px; height: 30px; text-align: center;margin-top: 40px;">
+					<a href="javascript:void(0)" style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Administração<a>
+				</div>
+				<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
+					<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Financeiro<a>
+				</div>
+				<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
+					<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Entregas<a>
+				</div>
+				<div style="background-color:black; width: 100px; height: 30px; text-align: center;margin-top: 40px;">
+					<a href="javascript:void(0)"style="color:white; text-decoration: none; font-family: Tahoma, Geneva, sans-serif;">Gestão<a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cabecalho">
+			<br/>
+			<h1>Relatório Faturamento</h1>
+			<br/>
+		</div>
+		
+	</header>
+
+	<div class = "formulario">
+			<br/>
+			
+				<h2 id="subsubtit">Pesquisa Faturamento</h2>
+				<!-- Formulario -->
+				<form class = "formulario" action="Script_do_Formulario.php" method="post">
+					<fieldset>
+					 <legend><b>Relatório Faturamento</b></legend>
+					 
+						<p>
+							<label for="cname">Data inicio : <input type="date" name="data_inicio" id="data" size="40" maxlength="40" placeholder="Data Inicio"/></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+							<label for="cname">Data fim : <input type="date" name="data_fim" id="data" size="40" maxlength="40" placeholder="Data Inicio"/></label>
+							&nbsp &nbsp &nbsp &nbsp &nbsp 
+							<button type="button" name="fpesquisar" value="pesquisar" class="css3button">Pesquisar</button>
+						</p>
+					</fieldset>
+				</form>
+				<br/>
+</body>
+</html>
