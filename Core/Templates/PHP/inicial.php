@@ -1,14 +1,13 @@
 
 <?php
-session_start();
-if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-{
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header('location:index.html');
-    }
+	session_start();
+	if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+		unset($_SESSION['login']);
+		unset($_SESSION['senha']);
+		header('location:index.html');
+	}
  
-$logado = $_SESSION['login'];
+	$logado = $_SESSION['login'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,8 +33,8 @@ $logado = $_SESSION['login'];
 			<div class="row">
 				<div class="intcont">
 					<?php
-						echo "<span class='bem' >Bem vindo! Vinicius";
-						$logado;
+						echo "<span class='bem' >Bem vindo! <br/>".$logado;
+						
 						echo "</span>";
 					?>
 				</div>
@@ -76,9 +75,7 @@ $logado = $_SESSION['login'];
 		/*if ($_session['poder'] ==1) {	*/
 		?>
 	<div style="display: flex;" >
-		<div style="background-color: #0072bc;width:300px;height:300px;margin-top: 10px;">
-				
-		</div>
+		<!-- <div style="background-color: #0072bc;width:300px;height:300px;margin-top: 10px;"></div> -->
 	<?php
 	/*	};*/
 	?>

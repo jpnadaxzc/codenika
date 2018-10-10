@@ -67,6 +67,27 @@
 	
 <div class='x_painel'>
 	<div class="row">
+		<div class="col-xs-12 col-md-3">
+			<label for="fullname">Cliente:</label>
+			<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
+				<option></option>
+				<?php 
+					$select_mot = 'select * from usuarios';
+					$select_mot_query = mysqli_query($con,$select_mot);
+					$num_row = mysqli_num_rows($select_mot_query);
+
+					if ($num_row > 0){
+					$row = mysqli_fetch_array($select_mot_query);
+						echo "<option value='{$row[0]}'>{$row[1]}</option>";
+					};
+				?>
+			</select>
+		</div>
+		<div class="col-xs-12 col-md-3">
+			<img src="img/mais.jpg"/>
+		</div>
+	</div>
+	<div class="row">
 		<form  method="post">
 			<div class="col-md-4">	
 				<label for="nome">Nome:</label><span style="color:red;">*</span><span id="msgnome_cliente" class="esconde color">&nbsp Campo Obrigatorio</span>
