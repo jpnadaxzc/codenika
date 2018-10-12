@@ -1,3 +1,4 @@
+<?php include_once 'conexao.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +44,17 @@
 					<div class=" col-md-4">	
 						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="motorista" id="caminhao">
-							<option>asdasdasdasdasdas</option>
+						<option></option>
+							<?php 
+								$select_mot = 'select * from motorista';
+								$select_mot_query = mysqli_query($con,$select_mot);
+								$num_row = mysqli_num_rows($select_mot_query);
+
+								if ($num_row > 0){
+								$row = mysqli_fetch_array($select_mot_query);
+									echo "<option value='{$row[0]}'>{$row[1]}</option>";
+								};
+							?>
 						</select>
 					</div>
 					<div class=" col-md-4">	
