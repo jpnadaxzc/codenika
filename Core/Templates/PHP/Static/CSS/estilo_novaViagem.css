@@ -1,0 +1,12 @@
+.x_painel{
+    margin-top: 3%;
+    width: 90%; 
+	margin-left: 5%;
+	background-color: white;
+	
+}
+
+.esconde{
+    display: none;
+    color: red;
+}

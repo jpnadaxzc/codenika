@@ -2,6 +2,7 @@
 .container{
     display: flex;
     width: 100%;
+    z-index: 999;
 }
 
 
@@ -62,6 +63,7 @@ body,
 .sub-menu {
     margin: 0;
     padding: 0;
+    z-index: 999;
 }
 .clearfix:after{
     content: '.';
