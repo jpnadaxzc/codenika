@@ -269,7 +269,7 @@ function salvacliente(){
 			console.log(data);
 			$('#msg').html(data).focus();;
 		},
-		erro:function(data){
+		error:function(data){
 			$('#msg').html('<div class="alert alert-danger"><strong>ERRO!</strong>'+data+'</div>').focus();;
 		}
 	})

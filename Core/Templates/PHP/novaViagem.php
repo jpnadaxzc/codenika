@@ -1,4 +1,15 @@
-<?php include_once 'conexao.php'; ?>
+<?php include_once 'conexao.php'; 
+$Query_num_viagem = "select id from nika.viagem order by id desc limit 1";
+$res_query_vaigem = mysqli_query($con,$Query_num_viagem);
+$num_rowViagens = mysqli_num_rows($Query_numres_query_vaigem_viagem);
+
+if ($num_row > 0){
+$row_vaigem = mysqli_fetch_array($res_query_vaigem);
+ $numvaiagem = $row_vaigem[0]+1;
+}else{
+	$numvaiagem = 1;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +43,17 @@
 			<div class="col-xs-12 col-md-3">
 				<label for="fullname">Cliente:</label>
 				<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
-					<option>asdasdasdasdasdas</option>
+					<option></option>
+					<?php 
+								$select_cliente = 'select * from clientes order by nome';
+								$select_cliente_query = mysqli_query($con,$select_cliente);
+								$num_row_cliente = mysqli_num_rows($select_cliente_query);
+
+								if ($num_row_cliente > 0){
+								$row_cliente = mysqli_fetch_array($select_cliente_query);
+									echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
+								};
+							?>
 					
 				</select>
 			</div>
@@ -44,9 +65,9 @@
 					<div class=" col-md-4">	
 						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="motorista" id="caminhao">
-						<option></option>
+							<option></option>
 							<?php 
-								$select_mot = 'select * from motorista';
+								$select_mot = 'select * from motorista order by nome';
 								$select_mot_query = mysqli_query($con,$select_mot);
 								$num_row = mysqli_num_rows($select_mot_query);
 
@@ -60,7 +81,18 @@
 					<div class=" col-md-4">	
 						<label for="endereço">Caminhão:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="motorista" id="caminhao">
-							<option>asdasdasdasdasdas</option>
+							<option></option>
+							<?php 
+								$select_veiculo = 'select * from veiculo order by placa';
+								$select_veiculo_query = mysqli_query($con,$select_veiculo);
+								$num_row_veiculos = mysqli_num_rows($select_mot_query);
+
+								if ($num_row_veiculos > 0){
+									$row_veiculo = mysqli_fetch_array($select_veiculo_query);
+									echo "<option value='{$row_veiculo[0]}'>{$row_veiculo[1]}</option>";
+								};
+							?>
+						</select>
 						</select>
 					</div>	
 					<div class="col-md-4">	
@@ -81,9 +113,8 @@
 					</div>
 				</div>
 			</form>
+			<button  class="btn btn-default bot" onclick="salvaviagem()" type="button">Salvar</button>
 		</div>
-		
-		
 	</div>
 	
 </body>
@@ -98,5 +129,20 @@
                  format: 'DD/MM/YYYY'
            });
 	});
+
+	function salvaviagem(){
+		
+		$.ajax({
+			type:'POST',
+			url:'salvaviagem.php',
+			data:{},
+			successe:function(html){
+
+			},
+			error:function(html){
+
+			}
+		})
+	}
                
 </script>
