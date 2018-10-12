@@ -27,9 +27,9 @@
                                                </ul>
                                    </ul><!-- submenu -->
                            </li>
-                           <li><a href="#">Financeiro</a>
-                           <li><a href="#">Entregas</a>
-                           <li><a href="#">Gestão</a>
+                           <li><a href="construcao.php">Financeiro</a>
+                           <li><a href="construcao.php">Entregas</a>
+                           <li><a href="construcao.php">Gestão</a>
                    </ul>
            </div>
        </div>
