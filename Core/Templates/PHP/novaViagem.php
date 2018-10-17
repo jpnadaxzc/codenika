@@ -42,7 +42,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 			</div>
 			<div class="col-xs-12 col-md-3">
 				<label for="fullname">Cliente:</label>
-				<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
+				<select class="select2_single js-example-basic-single form-control" name="cliente" id="cliente">
 					<option></option>
 					<?php 
 								$select_cliente = 'select * from clientes order by nome';
@@ -64,7 +64,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 				<div class="row">
 					<div class=" col-md-4">	
 						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
-						<select class="select2_single js-example-basic-single form-control" name="motorista" id="caminhao">
+						<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
 							<option></option>
 							<?php 
 								$select_mot = 'select * from motorista order by nome';
@@ -80,7 +80,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 					</div>
 					<div class=" col-md-4">	
 						<label for="endereço">Caminhão:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
-						<select class="select2_single js-example-basic-single form-control" name="motorista" id="caminhao">
+						<select class="select2_single js-example-basic-single form-control" name="caminhao" id="caminhao">
 							<option></option>
 							<?php 
 								$select_veiculo = 'select * from veiculo order by placa';
@@ -96,7 +96,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 						</select>
 					</div>	
 					<div class="col-md-4">	
-						<label for="rg">Destino:</label></label><span style="color:red;">*</span><span id="msgrg" class="esconde color"> &nbsp Campo Obrigatorio</span>
+						<label for="Destino">Destino:</label></label><span style="color:red;">*</span><span id="msgrg" class="esconde color"> &nbsp Campo Obrigatorio</span>
 						<input class="form-control" type="text" id="Destino"/>
 					</div>
 				</div>
@@ -105,7 +105,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 					<div class="col-md-4">	
 						<label for="nome">Data saida:</label><span style="color:red;">*</span><span id="msgnome_cliente" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<div class="input-group date col-md-12 col-sm-12 col-xs-12" data-provide="datepicker">
-							<input type="text" class="form-control">
+							<input type="text" id="data"class="form-control">
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</div>
@@ -116,6 +116,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 			<button  class="btn btn-default bot" onclick="salvaviagem()" type="button">Salvar</button>
 		</div>
 	</div>
+	<div id="msg"></div>
 	
 </body>
 </html>
@@ -123,7 +124,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 <script src="Static/js/select2.min.js"></script>
 <script src="Static/js/bootstrap-datepicker.min.js"></script>
 <script>
-    $('.js-example-basic-single').select2({ width: '100%' ,height: 35px});
+    $('.js-example-basic-single').select2({ width: '100%' ,height: '35px'});
 	$(function () {
 		$('.datepicker').datepicker({
                  format: 'DD/MM/YYYY'
@@ -131,16 +132,23 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	});
 
 	function salvaviagem(){
+		$("#msg").html("<img src='img/loading.gif' style='margin-left:40%' />");
 		
+		var date = $('#data').val();
+		var destino = $('#Destino').val();
+		var caminhao = $('#caminhao').val();
+		var motorista = $('#motorista').val();
+		var cliente = $('#cliente').val();
 		$.ajax({
 			type:'POST',
 			url:'salvaviagem.php',
-			data:{},
-			successe:function(html){
-
+			data:{date:date,destino:destino,caminhao:caminhao,motorista:motorista,cliente:cliente},
+			success:function(html){
+				$('#msg').html(html);
+				
 			},
 			error:function(html){
-
+				alert();
 			}
 		})
 	}
