@@ -1,14 +1,15 @@
 <?php include_once 'conexao.php'; 
 $Query_num_viagem = "select id from nika.viagem order by id desc limit 1";
 $res_query_vaigem = mysqli_query($con,$Query_num_viagem);
-$num_rowViagens = mysqli_num_rows($Query_numres_query_vaigem_viagem);
+$num_rowViagens = mysqli_num_rows($res_query_vaigem);
 
-if ($num_row > 0){
+if ($num_rowViagens > 0){
 $row_vaigem = mysqli_fetch_array($res_query_vaigem);
  $numvaiagem = $row_vaigem[0]+1;
 }else{
 	$numvaiagem = 1;
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,10 +39,10 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	<div class='x_painel'>
 		<div class="row">
 			<div class="col-md-2 col-sm-2 col-xs-2" style="margin-top:15px; font-weight: bolder; margin-left:-15px;">
-				Numero da viagem : <?php echo $numvaiagem; ?>
+				Numero da viagem : <?php  echo $numvaiagem; ?>
 			</div>
 			<div class="col-xs-12 col-md-3">
-				<label for="fullname">Cliente:</label>
+				<label for="fullname">Cliente:</label><span style="color:red;">*</span><span id="msgcliente" class="esconde color">&nbsp Campo Obrigatorio</span>
 				<select class="select2_single js-example-basic-single form-control" name="cliente" id="cliente">
 					<option></option>
 					<?php 
@@ -63,7 +64,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 			<form  method="post">
 				<div class="row">
 					<div class=" col-md-4">	
-						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
+						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgmotorista" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
 							<option></option>
 							<?php 
@@ -79,7 +80,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 						</select>
 					</div>
 					<div class=" col-md-4">	
-						<label for="endereço">Caminhão:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
+						<label for="endereço">Caminhão:</label></label><span style="color:red;">*</span><span id="msgcaminhao" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="caminhao" id="caminhao">
 							<option></option>
 							<?php 
@@ -96,14 +97,14 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 						</select>
 					</div>	
 					<div class="col-md-4">	
-						<label for="Destino">Destino:</label></label><span style="color:red;">*</span><span id="msgrg" class="esconde color"> &nbsp Campo Obrigatorio</span>
+						<label for="Destino">Destino:</label></label><span style="color:red;">*</span><span id="msgdestino" class="esconde color"> &nbsp Campo Obrigatorio</span>
 						<input class="form-control" type="text" id="Destino"/>
 					</div>
 				</div>
 				<br/>
 				<div class="row">
 					<div class="col-md-4">	
-						<label for="nome">Data saida:</label><span style="color:red;">*</span><span id="msgnome_cliente" class="esconde color">&nbsp Campo Obrigatorio</span>
+						<label for="nome">Data saida:</label><span style="color:red;">*</span><span id="msgdata_saida" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<div class="input-group date col-md-12 col-sm-12 col-xs-12" data-provide="datepicker">
 							<input type="text" id="data"class="form-control">
 							<div class="input-group-addon">
@@ -116,6 +117,8 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 			<button  class="btn btn-default bot" onclick="salvaviagem()" type="button">Salvar</button>
 		</div>
 	</div>
+	<br>
+	<br>
 	<div id="msg"></div>
 	
 </body>
@@ -139,6 +142,47 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 		var caminhao = $('#caminhao').val();
 		var motorista = $('#motorista').val();
 		var cliente = $('#cliente').val();
+		var chave = false;
+		if(date == ''){
+			$('#msgdata_saida').show();
+			chave = true;
+		}else{
+			$('#msgdata_saida').hide();
+		}
+
+		if(destino == ''){
+			$('#msgdestino').show();
+			chave = true;
+		}else{
+			$('#msgdestino').hide();
+		}
+
+		if(caminhao == ''){
+			$('#msgcaminhao').show();
+			chave = true;
+		}else{
+			$('#msgcaminhao').hide();
+		}
+
+		if(motorista == ''){
+			$('#msgmotorista').show();
+			chave = true;
+		}else{
+			$('#msgmotorista').hide();
+		}
+
+		if(cliente == ''){
+			$('#msgcliente').show();
+			chave = true;
+		}else{
+			$('#msgcliente').hide();
+		}
+
+		if(chave){
+			$('#msg').html('');
+			return false;
+		}
+
 		$.ajax({
 			type:'POST',
 			url:'salvaviagem.php',

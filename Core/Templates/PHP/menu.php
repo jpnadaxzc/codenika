@@ -11,13 +11,21 @@
            </div>
            <div class="menu-container">
                    <ul class="menu clearfix">
-                       <li><a href="novaViagem.php">Nova viagem</a></li>
-                           <li><a href="#">Administração</a>
-                                   <ul class="sub-menu clearfix">
+                        <li>
+                            <a href="novaViagem.php">Viagem</a>
+                            <ul class="sub-menu clearfix">
+                                <li><a href="novaViagem.php">Nova Viagem</a></li>
+                                <li><a href="construcao.php">Finaliza Viagem</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Administração</a>
+                            <ul class="sub-menu clearfix">
                                            <li><a href="#">Cadastro</a>
                                                <ul class="sub-menu">
-                                                   <li><a href="cadastroFuncionario.php">Funcionarios</a></li>
+                                                   <li><a href="cadastroFuncionario.php">Usuario</a></li>
                                                    <li><a href="Cadastro_cliente.php">Clientes</a></li>
+                                                   <li><a href="construcao.php">Caminhão</a></li>
+                                                   <li><a href="construcao.php">Motorista</a></li>
                                                </ul>
                                            <li><a href="#">Relatorios</a>
                                                <ul class="sub-menu">
