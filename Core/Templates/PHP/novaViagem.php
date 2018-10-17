@@ -38,31 +38,32 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	
 	<div class='x_painel'>
 		<div class="row">
-			<div class="col-md-2 col-sm-2 col-xs-2" style="margin-top:15px; font-weight: bolder; margin-left:-15px;">
+			<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:15px; font-weight: bolder; margin-left:-15px;">
 				Numero da viagem : <?php  echo $numvaiagem; ?>
 			</div>
-			<div class="col-xs-12 col-md-3">
-				<label for="fullname">Cliente:</label><span style="color:red;">*</span><span id="msgcliente" class="esconde color">&nbsp Campo Obrigatorio</span>
-				<select class="select2_single js-example-basic-single form-control" name="cliente" id="cliente">
-					<option></option>
-					<?php 
-								$select_cliente = 'select * from clientes order by nome';
-								$select_cliente_query = mysqli_query($con,$select_cliente);
-								$num_row_cliente = mysqli_num_rows($select_cliente_query);
-
-								if ($num_row_cliente > 0){
-								$row_cliente = mysqli_fetch_array($select_cliente_query);
-									echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
-								};
-							?>
-					
-				</select>
-			</div>
+			
 		</div>
 		<br/>
 		<div class="row">
 			<form  method="post">
 				<div class="row">
+					<div class="col-md-4">
+						<label for="fullname">Cliente:</label><span style="color:red;">*</span><span id="msgcliente" class="esconde color">&nbsp Campo Obrigatorio</span>
+						<select class="select2_single js-example-basic-single form-control" name="cliente" id="cliente">
+							<option></option>
+							<?php 
+										$select_cliente = 'select * from clientes order by nome';
+										$select_cliente_query = mysqli_query($con,$select_cliente);
+										$num_row_cliente = mysqli_num_rows($select_cliente_query);
+
+										if ($num_row_cliente > 0){
+										$row_cliente = mysqli_fetch_array($select_cliente_query);
+											echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
+										};
+									?>
+							
+						</select>
+					</div>
 					<div class=" col-md-4">	
 						<label for="endereço">Motorista:</label></label><span style="color:red;">*</span><span id="msgmotorista" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
@@ -94,15 +95,15 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 								};
 							?>
 						</select>
-						</select>
-					</div>	
+					</div>
+				</div>
+				<br>
+				
+				<div class="row">
 					<div class="col-md-4">	
 						<label for="Destino">Destino:</label></label><span style="color:red;">*</span><span id="msgdestino" class="esconde color"> &nbsp Campo Obrigatorio</span>
 						<input class="form-control" type="text" id="Destino"/>
 					</div>
-				</div>
-				<br/>
-				<div class="row">
 					<div class="col-md-4">	
 						<label for="nome">Data saida:</label><span style="color:red;">*</span><span id="msgdata_saida" class="esconde color">&nbsp Campo Obrigatorio</span>
 						<div class="input-group date col-md-12 col-sm-12 col-xs-12" data-provide="datepicker">
@@ -114,6 +115,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 					</div>
 				</div>
 			</form>
+			<br/>
 			<button  class="btn btn-default bot" onclick="salvaviagem()" type="button">Salvar</button>
 		</div>
 	</div>

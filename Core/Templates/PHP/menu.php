@@ -12,7 +12,7 @@
            <div class="menu-container">
                    <ul class="menu clearfix">
                         <li>
-                            <a href="novaViagem.php">Viagem</a>
+                            <a href="#">Viagem</a>
                             <ul class="sub-menu clearfix">
                                 <li><a href="novaViagem.php">Nova Viagem</a></li>
                                 <li><a href="construcao.php">Finaliza Viagem</a></li>
@@ -24,7 +24,8 @@
                                                <ul class="sub-menu">
                                                    <li><a href="cadastroFuncionario.php">Usuario</a></li>
                                                    <li><a href="Cadastro_cliente.php">Clientes</a></li>
-                                                   <li><a href="construcao.php">Caminhão</a></li>
+                                                   <li><a href="Cadastro_caminhao.php">Caminhão</a></li>
+                                                   <li><a href="construcao.php">Carreta</a></li>
                                                    <li><a href="construcao.php">Motorista</a></li>
                                                </ul>
                                            <li><a href="#">Relatorios</a>
