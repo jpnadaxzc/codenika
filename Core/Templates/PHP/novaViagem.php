@@ -125,7 +125,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	
 </body>
 </html>
-<script src="Static/js/jquery.min.js"></script>
+
 <script src="Static/js/select2.min.js"></script>
 <script src="Static/js/bootstrap-datepicker.min.js"></script>
 <script>

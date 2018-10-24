@@ -2,7 +2,8 @@
 <html>
 	<meta charset="utf-8"/>
 <head>
-	<link rel="stylesheet" type="text/css" href="/Code/Core/Templates/PHP/Static/CSS/estilo_login.css">
+	<link rel="stylesheet" type="text/css" href="Static/CSS/estilo_login.css">
+	<link rel="stylesheet" href="Static/bootstrap/dist/css/bootstrap.min.css">
 	<title>Login</title>
 </head>
 	<body class="tudo">
@@ -12,29 +13,49 @@
 			</div>
 		</div>
 		<div>
-			<div class="caixa">
-				<form method="post" action="login2.php" >
+			<div class="">
+				<form   >
+					<div id="msg"></div>
 					<div class="user">
 						Usuário
 					</div>
 					<div class="campos">
-						<input type="text" title="Usuário" name="login"  class="usuario" /><br/><br/>
+						<input type="text" title="Usuário" id="login" name="login"  class="usuario" /><br/><br/>
 					</div>
 					<div class="senha">
 						Senha
 					</div>
 					<div class="campos">
-						<input type="password" title="Senha" name="senha" /><br/><br/>
+						<input type="password" title="Senha" id="senha" name="senha" /><br/><br/>
 					</div>
 					<div class="check">
 						<input type="checkbox" value="Lembrar_senha"> Lembrar minhas credenciais<br/><br/>
 						<!-- fazer cookie para lembrar a senha do usuário em php eu acho -->
 					</div>
 					<div class="botao">
-						<input type="submit"  title="Entrar" value="Entrar">
+						<button type="button" class="" onclick="loga()">Entra</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</body>
 </html>
+<script src="Static/js/jquery.min.js"></script>
+<script>
+function loga(){
+	$('#msg').html("");
+	var login = $('#login').val();
+	var senha =$('#senha').val();
+	$.ajax({
+		type:'POST',
+		url:'login2.php',
+		data:{login:login,senha:senha},
+		success:function(html){
+			$('#msg').html(html);
+		},error:function(html){
+			$('#msg').html("<div class='alert alert-danger'><strong>ERRO!</strong>"+html+"</div>");
+		}
+
+	})
+}	
+</script>
