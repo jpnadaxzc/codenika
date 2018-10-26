@@ -12,3 +12,7 @@ Funcionalidade: Visualizar relatorio de viagem
 	Cenario: visualizar relatorio web 
 		Quando selecionar o motorista
 		Entao visualizo o relatorio web
+
+	# Cenario: erro selecionar motorista
+	# 	Quando não selecionar o motorista
+	# 	Entao visualiza a msg selecione um motorista

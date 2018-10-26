@@ -1,18 +1,17 @@
 #language: pt
 #utf-8
-@cadastrarCliente
-Funcionalidade: Cadastrar um cliente
+@cadastrarUsuario
+Funcionalidade: Cadastrar um Usuario
 	Eu como administrador do sistema
 	Quero logar no site
-	Para cadastrar um novo cliente
-
+	Para cadastrar um novo Usuario
 
 	Contexto: Administrador acessa a pagina
-		Dado que o adm esteja na pagina de cadastro de clientes
+		Dado que o adm esteja na pagina de cadastro de usuario
 
 	Cenario: Cadastro valido
 		Quando preencher as informacoes solicitadas
-		Entao visualizo a msg de cliente cadastrado
+		Entao visualizo a msg de usuario cadastrado
 
 	# Cenario: campos obrigatorios
 	# 	Quando não preencher alguma informacao solicitada
@@ -20,5 +19,4 @@ Funcionalidade: Cadastrar um cliente
 
 	# Cenario: Cadastro duplicado
 	# 	Quando preencher as informacoes solicitadas
-	# 	Entao o sistema retorna uma msg de cliente ja cadastrado
-
+	# 	Entao o sistema retorna uma msg de usuario ja cadastrado
