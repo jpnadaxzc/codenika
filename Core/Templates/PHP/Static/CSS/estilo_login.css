@@ -8,31 +8,14 @@
   min-height: 200px;
   overflow: hidden;
 }
-.tudo{
+body{
 	background-color: gray
 }
 .logo{
 	justify-content: center;
   display: flex;
 }
-.campos{
-  margin-left: 135px;
-  margin-top: -20px;
-}
-.user{
-  justify-content: center;
-  display: flex;
-  margin-top:45px;
-  margin-left: -190px;
-}
-.senha{
-  justify-content: center;
-  display: flex;
-  margin-left: -190px;
-}
-.check{
-  margin-left: 85px;
-}
+
 .botao{
-  margin-left: 250px;
+  /* margin-left: 3%; */
 }

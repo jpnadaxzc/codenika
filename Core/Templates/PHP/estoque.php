@@ -3,7 +3,7 @@
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
-include('phpqrcode/qrlib.php'); 
+
 
 include("conexao.php");
 ?>
@@ -42,13 +42,7 @@ include("conexao.php");
     -->
 	
 	<div class='x_painel'>
-		<div class="row">
-            <?php
-              $svgCode =QRcode::png('https://pt.stackoverflow.com/questions/151276/pegar-as-urls-da-p%C3%A1gina-de-resultado-de-busca-do-google', 'level_L.png');
-     
-			  rename('level_L.png','qrcode/level_L.png')
-            ?>
-        </div>
+		
 	</div>
 	<button  class="btn btn-default bot" type="button" style="margin-left:15px;" data-toggle="modal" data-target="#myModal">Cadastrar</button>
 	<div id="table"></div>
@@ -121,29 +115,7 @@ include("conexao.php");
 
 <script>
  $(document).ready(function() {
-            $('#tableestoque').dataTable({
-                dom: '<Bf<t>lip>',
-                 buttons: [
-                     {
-                        extend:'excelHtml5'
-                         
-                     }
-                 ],
-                "language": {
-                    "lengthMenu": "Exibição _MENU_ Registros por página",
-                    "zeroRecords": "Nothing found - sorry",
-                    "info": "Mostrando a página _PAGE_ de _PAGES_",
-                    "infoEmpty": "No records available",
-                    "sSearch": "Pesquisar: ",
-                    "oPaginate": {
-                    "sNext": "Próximo",
-                    "sPrevious": "Anterior",
-                    "sFirst": "Primeiro",
-                    "sLast": "Último"
-                    },
-                    "infoFiltered": "(filtered from _MAX_ total records)"
-                }
-            });
+            
         }); 
 
   	$('#qtd').keyup(function() {
@@ -175,6 +147,29 @@ include("conexao.php");
 			data:{},
 			success:function(html){
 				$("#table").html(html);
+				$('#tableestoque').dataTable({
+                dom: '<Bf<t>lip>',
+                 buttons: [
+                     {
+                        extend:'excelHtml5'
+                         
+                     }
+                 ],
+                "language": {
+                    "lengthMenu": "Exibição _MENU_ Registros por página",
+                    "zeroRecords": "Nothing found - sorry",
+                    "info": "Mostrando a página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No records available",
+                    "sSearch": "Pesquisar: ",
+                    "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                    },
+                    "infoFiltered": "(filtered from _MAX_ total records)"
+                }
+            });
 			},
 			error:function(){
 				$("#table").html("<div class='alert alert-danger'><strong>ERRO!</strong> .</div>");
@@ -199,7 +194,10 @@ function qrcode(fileNema){
 			data:{fileNema:fileNema},
 			success:function(html){
 				$("#modal2").html(html);
-				$("#modal2").modal('show');
+				
+				$("#modalqrode").modal('show');
+				
+				
 			},
 			error:function(){
 				$("#modal2").html("<div class='alert alert-danger'><strong>ERRO!</strong> .</div>");

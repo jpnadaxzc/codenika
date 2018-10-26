@@ -1,22 +1,18 @@
-<div class="modal fade" id="myModal2" role="dialog">
+<?php
+$filename = $_POST['fileNema'];
+$img = "<img src='qrcode/$filename' style='width: 100%;'/>";
+?>
+<div class="modal fade" id="modalqrode" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style="width: 60%;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">QRCode</h4>
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <?php echo $img; ?> 
             </div>
         </div>
     </div>
 </div>
-<script>
-$(document).ready(function() {
-    $("#modal2").modal('show');
-}); 
-</script>

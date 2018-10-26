@@ -4,38 +4,48 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="Static/CSS/estilo_login.css">
 	<link rel="stylesheet" href="Static/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Static/CSS/estilo_novaViagem.css" type="text/css">
 	<title>Login</title>
 </head>
-	<body class="tudo">
-		<div class="logo">
-			<div>
-				<img src="https://github.com/isasmartins/logo/blob/master/logo2.png?raw=true"></img>
-			</div>
-		</div>
-		<div>
-			<div class="">
-				<form   >
-					<div id="msg"></div>
-					<div class="user">
-						Usuário
+	<body class="row" style="background-color: gainsboro;">
+		
+		<form   style="margin-top: 10%;">
+			<div class="x_painel" style="background-color: gainsboro;">
+					<div class="logo">
+							<div>
+								<img src="img/logo2.png" />
+							</div>
+						</div>
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class=" col-md-2">
+						<div id="msg"></div>
 					</div>
-					<div class="campos">
-						<input type="text" title="Usuário" id="login" name="login"  class="usuario" /><br/><br/>
+				</div>
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class=" col-md-2">
+						<label>Usuário</label><br>
+						<input type="text" class="form-control" title="Usuário" id="login" name="login"  class="usuario" />
 					</div>
-					<div class="senha">
-						Senha
+				</div>	
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class=" col-md-2">
+						<label>Senha</label><br>
+						<input type="password" class="form-control" title="Senha" id="senha" name="senha" />
 					</div>
-					<div class="campos">
-						<input type="password" title="Senha" id="senha" name="senha" /><br/><br/>
-					</div>
-					<div class="check">
-						<input type="checkbox" value="Lembrar_senha"> Lembrar minhas credenciais<br/><br/>
+					<div class=" col-md-1">
+						<!-- <input type="checkbox"  value="Lembrar_senha"> Lembrar minhas credenciais<br/><br/> -->
 						<!-- fazer cookie para lembrar a senha do usuário em php eu acho -->
 					</div>
-					<div class="botao">
-						<button type="button" class="" onclick="loga()">Entra</button>
-					</div>
-				</form>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="col-md-6"></div>
+			<div class="botao">
+					<button type="button" class="btn btn-default bot" onclick="loga()">Entrar</button>
 			</div>
 		</div>
 	</body>
@@ -46,12 +56,18 @@ function loga(){
 	$('#msg').html("");
 	var login = $('#login').val();
 	var senha =$('#senha').val();
+	
 	$.ajax({
 		type:'POST',
 		url:'login2.php',
 		data:{login:login,senha:senha},
 		success:function(html){
-			$('#msg').html(html);
+			console.log(html.length)
+			if(html.length < 50){
+				window.location.href = "inicial.php";
+			}else{
+				$('#msg').html(html);
+			}
 		},error:function(html){
 			$('#msg').html("<div class='alert alert-danger'><strong>ERRO!</strong>"+html+"</div>");
 		}

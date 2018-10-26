@@ -7,46 +7,46 @@
        </div>
        <div class="row">
            <div class="intcont">
-               <span class="bem" >Bem vindo!  '.$logado.'</span>
+               <span class="bem" >Bem vindo!  </span>
            </div>
            <div class="menu-container">
-                   <ul class="menu clearfix">
-                        <li>
-                            <a href="#">Viagem</a>
-                            <ul class="sub-menu clearfix">
-                                <li><a href="novaViagem.php">Nova Viagem</a></li>
-                                <li><a href="construcao.php">Finaliza Viagem</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Administração</a>
-                            <ul class="sub-menu clearfix">
-                                <li>
-                                    <a href="#">Cadastro</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="cadastroFuncionario.php">Usuario</a></li>
-                                        <li><a href="Cadastro_cliente.php">Clientes</a></li>
-                                        <li><a href="Cadastro_caminhao.php">Caminhão</a></li>
-                                        <li><a href="construcao.php">Carreta</a></li>
-                                        <li><a href="construcao.php">Motorista</a></li>
-                                    </ul>
-                                <li>
-                                    <a href="#">Relatorios</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="relatorio_viagem.php">Viagem</a></li>
-                                        <li><a href="relatorioMotorista.php">Motorista</a></li>
-                                        <li><a href="relatorioCliente.php">Cliente</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="estoque.php">Estoque</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="construcao.php">Financeiro</a>
-                        <li><a href="construcao.php">Entregas</a>
-                        <li><a href="construcao.php">Gestão</a>
-                   </ul>
+                <ul class="menu clearfix">
+                    <li>
+                        <a href="#">Administração</a>
+                        <ul class="sub-menu clearfix">
+                            <li>
+                                <a href="#">Cadastro</a>
+                                <ul class="sub-menu">
+                                    <li><a href="cadastroFuncionario.php">Usuario</a></li>
+                                    <li><a href="Cadastro_cliente.php">Clientes</a></li>
+                                    <li><a href="Cadastro_caminhao.php">Caminhão</a></li>
+                                    <li><a href="construcao.php">Carreta</a></li>
+                                    <li><a href="construcao.php">Motorista</a></li>
+                                </ul>
+                            <li>
+                                <a href="#">Relatorios</a>
+                                <ul class="sub-menu">
+                                    <li><a href="relatorio_viagem.php">Viagem</a></li>
+                                    <li><a href="relatorioMotorista.php">Motorista</a></li>
+                                    <li><a href="relatorioCliente.php">Cliente</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="construcao.php">Financeiro</a>
+                    <li>
+                        <a href="#">Entregas</a>
+                        <ul class="sub-menu clearfix">
+                            <li><a href="novaViagem.php">Nova Entregas</a></li>
+                            <li><a href="construcao.php">Finaliza Entregas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Gestão</a>
+                        <ul class="sub-menu">
+                            <li> <a href="estoque.php">Estoque</a></li>
+                        </ul>
+                    </li>
+                </ul>
            </div>
        </div>
    </div>

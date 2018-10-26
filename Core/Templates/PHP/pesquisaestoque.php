@@ -11,7 +11,7 @@ $table = '';
 
 if ($num_row > 0){
     $table .= "<div class='panel-body' style='with:100%'>
-                <table id='tableestoque' class='table table-striped table-bordered dt-responsive nowrap'>
+                <table id='tableestoque' class='table table-striped table-bordered dataTable no-footer'>
                 <thead>
                     <tr> 
                         <th>Descrição</th>
@@ -31,7 +31,7 @@ if ($num_row > 0){
                                     <td>$desq</td>
                                     <td>$val</td>
                                     <td>$qtd</td>
-                                    <td><i class='fas fa-qrcode' style='cursor:pointer' onclick='qrcode($qr)'></i></td>
+                                    <td><i class='fas fa-qrcode' style='cursor:pointer;font-size: 30px;' onclick='qrcode(\"$qr\")'></i></td>
                                 </tr>";
                 }
                 $table .= "</tbody>
