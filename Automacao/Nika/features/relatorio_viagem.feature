@@ -7,12 +7,12 @@ Funcionalidade: Visualizar relatorio de viagem
 	Para visualizar informacoes sobre a viagem do motorista
 
 	Contexto: Usuario acessa a pagina
-		Dado que eu esteja na pagina de relatorios
+		Dado que eu esteja na pagina de relatorios 
 
-	Cenario: visualizar relatorio web 
-		Quando selecionar o motorista
-		Entao visualizo o relatorio web
+	Cenario: Visualizar relatorio web 
+		Quando selecionar a viagem
+		Entao visualizo o relatorio web de viagem
 
-	# Cenario: erro selecionar motorista
-	# 	Quando não selecionar o motorista
-	# 	Entao visualiza a msg selecione um motorista
+	Cenario: Erro ao selecionar a viagem
+		Quando não selecionar a viagem
+		Entao visualiza a msg selecione uma viagem
