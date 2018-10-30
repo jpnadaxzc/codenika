@@ -68,7 +68,21 @@ include("conexao.php");
 				</div>
 				<div class="col-md-6">
 					<label>Fornecedor:</label><br>
-					<input type="text" clas="form-control" id="forn">
+					<select class="select2_single js-example-basic-single form-control" name="forn" id="forn">
+					<option></option>
+					<option value='1'>teste fornecedor</option>
+					<?php 
+						// $select_mot = 'select * from clientes';
+						// $select_mot_query = mysqli_query($con,$select_mot);
+						// $num_row = mysqli_num_rows($select_mot_query);
+
+						// if ($num_row > 0){
+						// $row = mysqli_fetch_array($select_mot_query);
+						// 	echo "<option value='{$row[0]}'>{$row[1]}</option>";
+						// };
+					?>
+				</select>
+					
 				</div>
 				<div class="col-md-3">
 					<label>Quantidade:</label><br>
@@ -84,7 +98,7 @@ include("conexao.php");
       </div>
 	  <div id="msg"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="table()">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="table()">Fecha</button>
       </div>
     </div>
 
@@ -140,7 +154,11 @@ include("conexao.php");
 	}
 
 	function table(){
-		
+		$('#desc').val('');
+		$('#qtd').val('');
+		$('#forn').val('');
+		$('#msg').html('');
+		$('#valor').val('');
 		$.ajax({
 			type:"POST",
 			url:"pesquisaestoque.php",
