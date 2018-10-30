@@ -9,14 +9,14 @@ Funcionalidade: Visualizar relatorio do cliente
 	Contexto: Usuario acessa a pagina
 		Dado que eu esteja na pagina de relatorios do cliente
 
-	Cenario: visualizar relatorio web 
-		Quando selecionar o motorista
-		Entao visualizo o relatorio web
+	Cenario: Visualizar relatorio web 
+		Quando selecionar o cliente
+		Entao visualizo o relatorio web do cliente
 
-	# Cenario: erro selecionar cliente
-	# 	Quando não selecionar o cliente
-	# 	Entao visualiza a msg selecione um cliente
+	Cenario: Erro ao selecionar cliente
+		Quando não selecionar o cliente
+		Entao visualiza a msg selecione um cliente
 	
-	# Cenario: erro ao achar o motorista
-	# 	Quando digitar um cliente não existente
-	# 	Entao visualiza a msg de cliente não cadastrado
+	Cenario: Erro ao achar o cliente
+		Quando digitar um cliente não existente
+		Entao visualiza a msg de cliente não cadastrado

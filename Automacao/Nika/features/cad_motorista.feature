@@ -13,10 +13,10 @@ Funcionalidade: Cadastrar um Motorista
 		Quando preencher as informacoes solicitadas
 		Entao visualizo a msg de motorista cadastrado
 	
-	# Cenario: campos obrigatorios
-	# 	Quando não preencher alguma informacao solicitada
-	# 	Entao visualizo a msg de estes campos sao obrigatorios
+	Cenario: Campos obrigatorios
+		Quando não preencher informacoes do motorista solicitadas
+		Entao visualizo a msg de estes campos sao obrigatorios
 
-	# Cenario: Cadastro com erros
-	# 	Quando preencher as informacoes com um motorista ja existente
-	# 	Entao o sistema retorna uma msg de motorista ja cadastrado
+	Cenario: Cadastro com erros
+		Quando preencher as informacoes com um motorista ja existente
+		Entao o sistema retorna a msg de motorista ja cadastrado

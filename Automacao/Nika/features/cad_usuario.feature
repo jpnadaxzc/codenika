@@ -13,10 +13,10 @@ Funcionalidade: Cadastrar um Usuario
 		Quando preencher as informacoes solicitadas
 		Entao visualizo a msg de usuario cadastrado
 
-	# Cenario: campos obrigatorios
-	# 	Quando não preencher alguma informacao solicitada
-	# 	Entao visualizo a msg de estes campos sao obrigatorios
+	Cenario: Campos obrigatorios
+		Quando nao preencher alguma informacao do usuario solicitada
+		Entao visualizo a msg de estes campos sao obrigatorios
 
-	# Cenario: Cadastro duplicado
-	# 	Quando preencher as informacoes solicitadas
-	# 	Entao o sistema retorna uma msg de usuario ja cadastrado
+	Cenario: Cadastro duplicado
+		Quando preencher novamente as informacoes de usuario solicitadas
+		Entao o sistema retorna a msg de usuario ja cadastrado

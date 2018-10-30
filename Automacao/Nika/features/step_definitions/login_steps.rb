@@ -3,8 +3,8 @@ Dado("que eu esteja na home do site do Nika") do
 end                                                                          
                                                                              
 Quando("preencher as informacoes") do
-	find('input[name="login"]').set 'Joao'
-	find('input[name="senha"]').set '123'
+	find('input[name="login"]').set 'admin'
+	find('input[name="senha"]').set 'admin'
 	click_button('Entrar')
 end                                                                          
                                                                              

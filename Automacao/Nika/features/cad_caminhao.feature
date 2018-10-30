@@ -9,16 +9,14 @@ Funcionalidade: Cadastrar um caminhao
 	Contexto: Administrador acessa a pagina
 		Dado que o adm esteja na pagina de cadastro de caminhoes
 
-	Cenario: Cadastro valido
-		Quando preencher as informacoes solicitadas
+	Cenario: Cadastro de caminnhoes valido
+		Quando preencher as informacoes do caminhao solicitadas
 		Entao visualizo a msg de caminhao cadastrado
 	
-	# Cenario: campos obrigatorios
-	# 	Quando não preencher alguma informacao solicitada
-	# 	Entao visualizo a msg de estes campos sao obrigatorios
+	Cenario: Campos obrigatorios
+		Quando nao preencher as informacoes solicitadas
+		Entao visualizo a msg de estes campos referente ao caminhao sao obrigatorios
 
-	# Cenario: Cadastro invalido
-	# 	Quando preencher as informacoes com a de um caminhao existente
-	# 	Entao visualizo a msg de caminhao ja cadastrado
-
-
+	Cenario: Cadastro de caminhao invalido
+		Quando preencher as informacoes com a de um caminhao existente
+		Entao visualizo a msg de caminhao ja cadastrado
