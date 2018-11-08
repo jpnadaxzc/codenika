@@ -9,7 +9,7 @@
     
     $l = $_POST ['login'];
     $s = $_POST ['senha'];
-    $query = "select * from nika.usuarios WHERE nome = '$l' and senha = '$s' and ativo = 1 ";
+    $query = "select * from nika.usuarios WHERE login = '$l' and senha = '$s' and ativo = 1 and acesso = 1 ";
     $sql = mysqli_query ($con,$query ) or die (mysqli_error($con));
     $row = mysqli_num_rows($sql);
     

@@ -133,6 +133,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	$(function () {
 		$('.datepicker').datepicker({
                  format: 'DD/MM/YYYY'
+				 , locale: 'pt-br'
            });
 	});
 
