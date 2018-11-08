@@ -38,7 +38,7 @@
                         <a href="#">Entregas</a>
                         <ul class="sub-menu clearfix">
                             <li><a href="novaViagem.php">Nova Entregas</a></li>
-                            <li><a href="construcao.php">Finaliza Entregas</a></li>
+                            <li><a href="finalizaEntrega.php">Finaliza Entregas</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Gestão</a>

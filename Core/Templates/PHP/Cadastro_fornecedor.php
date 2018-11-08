@@ -15,7 +15,11 @@
 	INICIO DO MENU
 	=================
 -->
+<<<<<<< HEAD:Core/Templates/PHP/Cadastro_fornecedor.php
    <?php include 'menu.php' ?>
+=======
+<?php include 'menu.php' ?>
+>>>>>>> 3584542bdf290a63b4184edd9df2631637e93b19:Core/Templates/PHP/Cadastro_fornecedor.php
 	<!-- 
 		=================
 		FIM DO MENU
