@@ -49,8 +49,8 @@
 						</div>
 						<div class="col-md-4">
 							<label for="CadFunc-nasc">Data de Nascimento: </label><br>
-							<div class="input-group date col-md-12 col-sm-12 col-xs-12" data-provide="datepicker">
-								<input type="text" id="data"class="form-control">
+							<div class="input-group date col-md-12 col-sm-12 col-xs-12" id="datepicker"data-provide="datepicker">
+								<input type="text" id="tnasc" class="form-control">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-th"></span>
 								</div>
@@ -95,7 +95,7 @@
 							<input type="text" class="form-control" name="trua" id="trua" size="37" maxlength="40" placeholder="Rua, Av..."/>
 						</div>
 						<div class="col-md-4">
-							<label for="CadFunc-num">Numero:</label><br>
+							<label for="CadFunc-num">Numero:</label><span style="color:red;">*</span><span id="msgNum" class="esconde color">&nbsp Campo Obrigatorio</span><br>
 							<input type="text" class="form-control" name="tnum" id="tnum" size="5" maxlength="5" min="0" placeholder="xxx"/>
 						</div>
 						
@@ -211,6 +211,7 @@
 <script src="Static/js/jquery.min.js"></script>
 <script src="Static/js/jquery.mask.min.js"></script>
 <script src="Static/js/bootstrap-datepicker.min.js"></script>
+<script src="Static/js/datepicker-pt-BR.js"></script>
 <script>
 	function mostra(){
 		$('#login').show();
@@ -228,6 +229,11 @@
 
 	function gravar(){
 		$('#msg').html('')
+		$('#msgNum').hide();
+		if($('#tnum').val() == ''){
+			$('#msgNum').show();
+			return false;
+		}
 		var nome = $('#tname').val();
 		var data_nascimento = $('#tnasc').val();
 		if($("#tsexomasc").prop("checked")){
@@ -334,9 +340,9 @@
 	});
 
 	$(function () {
-		$('.datepicker').datepicker({
-                 format: 'DD/MM/YYYY'
-				 , locale: 'pt-br'
+		$('#datepicker').datepicker({
+                 format: 'dd/mm/yyyy',
+				 language: 'pt-BR'
            });
 	});
 

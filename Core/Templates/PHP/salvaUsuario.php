@@ -2,12 +2,19 @@
 try{
 include_once "conexao.php";
 $nome = $_POST['nome'];
-$data_nascimento = date('Y-m-d',strtotime($_POST['data_nascimento']));
+$data_nascimento = $_POST['data_nascimento'];
+$data_nascimento = str_replace('/',"-",$data_nascimento );
+$data_nascimento = date('Y-m-d',strtotime($data_nascimento ));
 $sexo = $_POST['sexo'];
 $rg = $_POST['rg'];
 $email = $_POST['email'];
 $end = $_POST['end'];
-$numero = $_POST['numero'];
+if(empty($_POST['numero'])){
+    $numero ="";
+}else{
+    $numero = $_POST['numero'];
+}
+
 $comple = $_POST['comple'];
 $bairro = $_POST['bairro'];
 $cidade = $_POST['cidade'];
@@ -48,7 +55,7 @@ $query = "insert into nika.usuarios (
                                     ,'$email'
                                     ,'$cep'
                                     ,'$end' 
-                                    ,$numero
+                                    ,'$numero'
                                     ,'$comple'
                                     ,'$bairro'
                                     ,'$cidade'
@@ -59,8 +66,10 @@ $query = "insert into nika.usuarios (
                                     ,1
                                     )
                                     ";
+                                    
+
 $res = mysqli_query($con,$query);
-print_r($query);
+
 if($res){
     print_r('<div class="alert alert-success"><strong>Sucesso!</strong>Usuario cadastrado com sucesso.</div>');
 }else{
