@@ -52,7 +52,7 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 						<select class="select2_single js-example-basic-single form-control" name="cliente" id="cliente">
 							<option></option>
 							<?php 
-										$select_cliente = 'select * from clientes order by nome';
+										$select_cliente = 'select * from nika.clientes order by nome';
 										$select_cliente_query = mysqli_query($con,$select_cliente);
 										$num_row_cliente = mysqli_num_rows($select_cliente_query);
 
@@ -106,12 +106,13 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 					</div>
 					<div class="col-md-4">	
 						<label for="nome">Data saida:</label><span style="color:red;">*</span><span id="msgdata_saida" class="esconde color">&nbsp Campo Obrigatorio</span>
-						<div class="input-group date col-md-12 col-sm-12 col-xs-12" data-provide="datepicker">
-							<input type="text" id="data"class="form-control">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-th"></span>
+						
+						<div class="input-group date col-md-12 col-sm-12 col-xs-12" id="datepicker"data-provide="datepicker">
+								<input type="text" id="data" class="form-control">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
 							</div>
-						</div>
 					</div>
 				</div>
 			</form>
@@ -125,16 +126,17 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 	
 </body>
 </html>
-
+<script src="Static/js/jquery.min.js"></script>
 <script src="Static/js/select2.min.js"></script>
 <script src="Static/js/bootstrap-datepicker.min.js"></script>
+<script src="Static/js/datepicker-pt-BR.js"></script>
 <script>
     $('.js-example-basic-single').select2({ width: '100%' ,height: '35px'});
-	$(function () {
-		$('.datepicker').datepicker({
-                 format: 'DD/MM/YYYY'
-				 , locale: 'pt-br'
-           });
+	jQuery(function () {
+		$('#datepicker').datepicker({
+			format: 'dd/mm/yyyy',
+			language: 'pt-BR'
+		});
 	});
 
 	function salvaviagem(){

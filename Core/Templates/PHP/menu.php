@@ -2,7 +2,7 @@
    echo '<div style="display: flex;">
    <div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
        <div>
-       <a href="inicial.php"><img class="logo1" src="img/logo2.png" alt="logo_nika"/></a>
+       <a href="#"><img class="logo1" src="img/logo2.png" alt="logo_nika"/></a>
            <!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
        </div>
        <div class="row">
@@ -33,7 +33,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="construcao.php">Financeiro</a>
                     <li>
                         <a href="#">Entregas</a>
                         <ul class="sub-menu clearfix">

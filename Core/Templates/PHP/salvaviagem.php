@@ -6,6 +6,7 @@ try{
     $caminhao = $_POST['caminhao'];
     $motorista = $_POST['motorista'];
     $cliente = $_POST['cliente'];
+    $date = str_replace('/',"-",$date);
     $date = date('Y-m-d',strtotime($date));
     
     $query = "insert into nika.viagem (cliente,motorista,caminhao,destino,data_saida) values ($cliente,$motorista,$caminhao,'$destino','$date')";

@@ -28,40 +28,20 @@
 	
 <div class='x_painel'>
 	<div class="row">
-		<div class="col-xs-12 col-md-3">
-			<label for="fullname">Cliente:</label>
-			<select class="select2_single js-example-basic-single form-control" name="motorista" id="motorista">
-				<option></option>
-				<?php 
-					$select_mot = 'select * from usuarios';
-					$select_mot_query = mysqli_query($con,$select_mot);
-					$num_row = mysqli_num_rows($select_mot_query);
-
-					if ($num_row > 0){
-					$row = mysqli_fetch_array($select_mot_query);
-						echo "<option value='{$row[0]}'>{$row[1]}</option>";
-					};
-				?>
-			</select>
-		</div>
-		<!-- <div class="col-xs-12 col-md-3">
-			<img src="img/mais.jpg"/>
-		</div> -->
-	</div>
-	<div class="row">
 		<form  method="post">
+			<div class=" col-md-4">	
+				<label for="endereço">CPF/CNPJ:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
+				<input class="form-control" type="text" id="cpf"/>
+			</div>	
 			<div class="col-md-4">	
 				<label for="nome">Nome:</label><span style="color:red;">*</span><span id="msgnome_cliente" class="esconde color">&nbsp Campo Obrigatorio</span>
 				<input class="form-control" type="text" id="nome_cliente"/>
 			</div>
 			<div class="col-md-4">	
-				<label for="rg">RG:</label></label><span style="color:red;">*</span><span id="msgrg" class="esconde color"> &nbsp Campo Obrigatorio</span>
+				<label for="rg">RG/Inscrição estadual:</label></label><span style="color:red;">*</span><span id="msgrg" class="esconde color"> &nbsp Campo Obrigatorio</span>
 				<input class="form-control" type="text" id="rg"/>
 			</div>
-			<div class=" col-md-4">	
-				<label for="endereço">CPF/CNPJ:</label></label><span style="color:red;">*</span><span id="msgcpf" class="esconde color">&nbsp Campo Obrigatorio</span>
-				<input class="form-control" type="text" id="cpf"/>
-			</div>	
+			
 			<div class=" col-md-4">	
 				<label for="endereço">Endereço:</label></label><span style="color:red;">*</span><span id="msgendereco" class="esconde color">&nbsp Campo Obrigatorio</span>
 				<input class="form-control" type="text" id="endereco"/>
@@ -88,7 +68,7 @@
 			</div>
 			<div class=" col-md-4">
 				<label for="Estafo">Estado:</label></label><span style="color:red;">*</span><span id="msgestado" class="esconde color">&nbsp Campo Obrigatorio</span>
-				<select class="form-control" name="estado"></div>
+				<select class="form-control" name="estado" id="estado"></div>
 					<option value="selecione">Selecione...</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
@@ -244,11 +224,20 @@ function salvacliente(){
 	$("#msg").html("<img src='img/loading.gif' style='margin-left:40%' />").focus();
 	var _nome = $('#nome_cliente').val();
 	var _rg = $('#rg').val();
+	_rg = _rg.replace(".","");
+	_rg = _rg.replace(".","");
+	_rg = _rg.replace(".","");
+	_rg = _rg.replace("-","");
+	_rg = _rg.replace("/","");
 	var _cpf = $('#cpf').val();
 	var _end = $('#endereco').val();
 	var _numero = $('#numero_casa').val();
 	var _bairro = $('#bairro').val();
 	var _cep = $('#cep').val();
+	_cep = _cep.replace(".","");
+	_cep = _cep.replace(".","");
+	_cep = _cep.replace(".","");
+	_cep = _cep.replace("-","");
 	var _bloco =  $('#bloco').val();
 	var _ap = $('#ap').val();
 	var _estado = $('#estado').val();
@@ -266,8 +255,9 @@ function salvacliente(){
 		data:{nome:_nome,rg:_rg,cpf:_cpf,end:_end,numero:_numero,bairro:_bairro,cep:_cep,bloco:_bloco,ap:_ap,estado:_estado,email:_email,
 		tel:_tel,telcom:_telcom,cel:_cel,site:_site,obs:_obs},
 		success: function(data){
-			console.log(data);
-			$('#msg').html(data).focus();;
+			
+			$('#msg').html(data).focus();
+			
 		},
 		error:function(data){
 			$('#msg').html('<div class="alert alert-danger"><strong>ERRO!</strong>'+data+'</div>').focus();;
@@ -275,4 +265,42 @@ function salvacliente(){
 	})
 	
 }
+
+$("#cpf").focusout(function(){
+	var cpf = $("#cpf").val()
+	cpf = cpf.replace(".","");
+	cpf = cpf.replace(".","");
+	cpf = cpf.replace(".","");
+	cpf = cpf.replace("-","");
+	cpf = cpf.replace("/","");
+	
+	if(cpf.length > 11){
+		
+		$.ajax({
+			url: 'https://www.receitaws.com.br/v1/cnpj/'+cpf,
+			dataType: 'jsonp',
+			crossDomain: true,
+			contentType: "application/json",
+			statusCode: {
+				200: function(data) { 
+					console.log(data);
+					$('#nome_cliente').val(data.nome);
+					$('#nome_cliente').prop("disabled", true);
+					$('#endereco').val(data.logradouro);
+					$('#endereco').prop("disabled", true);
+					$('#numero_casa').val(data.numero);
+					$('#numero_casa').prop("disabled", true);
+					$('#bairro').val(data.municipio);
+					$('#bairro').prop("disabled", true);
+					$('#cep').val(data.cep);
+					$('#cep').prop("disabled", true);
+					$('#estado').val(data.uf.toUpperCase());
+					$('#estado').prop("disabled", true);
+					$('#telefone').val(data.telefone)
+				}
+			}
+		});
+	}
+});	
+
 </script>

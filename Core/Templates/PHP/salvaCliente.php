@@ -64,8 +64,9 @@ try{
                     ,'$obs'
                 )
                     ";
+                    
     $res_query = mysqli_query($con,$query2);
-   
+
     if($res_query){
         print_r('<div class="alert alert-success"><strong>Sucesso!</strong>Cliente cadastrado com sucesso.</div>');
     }else{
