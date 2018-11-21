@@ -21,7 +21,7 @@
                                     <li><a href="Cadastro_cliente.php">Clientes</a></li>
                                     <li><a href="Cadastro_caminhao.php">Caminhão</a></li>
                                     <li><a href="construcao.php">Carreta</a></li>
-                                    <li><a href="construcao.php">Motorista</a></li>
+                                    <li><a href="cadastroMotorista.php">Motorista</a></li>
                                 </ul>
                             <li>
                                 <a href="#">Relatorios</a>

@@ -57,8 +57,10 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 										$num_row_cliente = mysqli_num_rows($select_cliente_query);
 
 										if ($num_row_cliente > 0){
-										$row_cliente = mysqli_fetch_array($select_cliente_query);
-											echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
+											for($i = 0;$num_row_cliente > $i; $i++){
+												$row_cliente = mysqli_fetch_array($select_cliente_query);
+												echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
+											}
 										};
 									?>
 							
@@ -74,8 +76,10 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 								$num_row = mysqli_num_rows($select_mot_query);
 
 								if ($num_row > 0){
-								$row = mysqli_fetch_array($select_mot_query);
-									echo "<option value='{$row[0]}'>{$row[1]}</option>";
+									for($i2 = 0;$num_row > $i2; $i2++){
+										$row = mysqli_fetch_array($select_mot_query);
+										echo "<option value='{$row[0]}'>{$row[1]}</option>";
+									}
 								};
 							?>
 						</select>
@@ -85,13 +89,16 @@ $row_vaigem = mysqli_fetch_array($res_query_vaigem);
 						<select class="select2_single js-example-basic-single form-control" name="caminhao" id="caminhao">
 							<option></option>
 							<?php 
-								$select_veiculo = 'select * from veiculo order by placa';
+								$select_veiculo = 'select * from nika.veiculo order by placa';
 								$select_veiculo_query = mysqli_query($con,$select_veiculo);
-								$num_row_veiculos = mysqli_num_rows($select_mot_query);
+								$num_row_veiculos = mysqli_num_rows($select_veiculo_query);
 
 								if ($num_row_veiculos > 0){
-									$row_veiculo = mysqli_fetch_array($select_veiculo_query);
-									echo "<option value='{$row_veiculo[0]}'>{$row_veiculo[1]}</option>";
+									for($i3 = 0;$num_row_veiculos > $i3; $i3++){
+										$row_veiculo = mysqli_fetch_array($select_veiculo_query);
+										
+										echo "<option value='{$row_veiculo[0]}'>{$row_veiculo[1]}</option>";
+									}
 								};
 							?>
 						</select>
