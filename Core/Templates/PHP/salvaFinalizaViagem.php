@@ -24,10 +24,12 @@ $idmotorista = $_POST['idmotorista'];
 $placa = $_POST['placa'];
 
 if(!empty($date)){
+    $date = str_replace("/","-",$date );
     $date = date('Y-m-d',strtotime($date));
 }
 
 if(!empty($pgdate)){
+    $pgdate = str_replace("/","-",$pgdate );
     $pgdate = date('Y-m-d',strtotime($pgdate));
 }
 
@@ -56,6 +58,7 @@ $query =  "insert into nika.relviagem (
                                         ,percurso
                                         ,id_motorista
                                         ,placa
+                                        ,os
                                         ) values (
                                             '$km'
                                             ,'$diesel'
@@ -74,8 +77,9 @@ $query =  "insert into nika.relviagem (
                                             ,'$percurso' 
                                             ,'$idmotorista'
                                             ,'$placa'
+                                            ,'$id'
                                         );";
-                                        
+                            
     $res_query = mysqli_query($con,$query);
    
     $query2 = "update nika.viagem set finalizada = 1 where id = '$id' ";

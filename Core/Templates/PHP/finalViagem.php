@@ -102,10 +102,9 @@
 				</div>
 			</div><br>
 			<button  class="btn btn-default bot" onclick="salva()" type="button" style="margin-left:15px;">Salvar</button>
-			<button  class="btn btn-default bot3" onclick="voltar()" type="button" style="margin-left:15px;">voltar</button>
+			<button  class="btn btn-default bot3" onclick="voltar()" type="button" style="margin-left:15px;">voltar</button><br><br>
+			<div id="msg"></div>
 		</div><br>
-		<div id="msg"></div>
-		
 	</body>
 </html>
 <script src="Static/js/jquery.min.js"></script>
@@ -139,14 +138,14 @@
 
 		var km = $('#km').val();
 		var diesel = $('#diesel').val();
-		var valor = $('#valor').val();
+		var valor = $('#valor').val().replace(',','.');
 		var dtpagamento = $('#pagame').val();
 		var date = $('#date').val();
 		var romaneio = $('#romaneio').val();
 		var cetn = $('#cetn').val();
 		var cetc = $('#cetc').val();
-		var fretes = $('#fretes').val();
-		var fretec = $('#fretec').val();
+		var fretes = $('#fretes').val().replace(',','.');
+		var fretec = $('#fretec').val().replace(',','.');
 		var comissao = $('#comissao').val();
 		var id = <?php echo $_GET['id']; ?>;
 		var idmotorista = <?php echo $_GET['motoristaid']; ?>;

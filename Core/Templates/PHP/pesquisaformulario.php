@@ -10,6 +10,8 @@ error_reporting(E_ALL);
 	$placaP = $_POST['placa'];
 	$periodo = "";
 	$periodo = $_POST['periodo'];
+	$cliente = "";
+	$cliente = $_POST['cliente'];
 	$totkmrodado = 0;
 	$totlitros = 0;
 	$totvalorlitros = 0;
@@ -17,7 +19,8 @@ error_reporting(E_ALL);
 	$totfsp = 0;
 	$totcomissao = 0;
 	$select = "select * from nika.relviagem
-				inner join nika.motorista on motorista.id_motorista = relviagem.id_motorista  where 1=1 ";
+	inner join nika.motorista on motorista.id_motorista = relviagem.id_motorista 
+	inner join  nika.viagem on viagem.id = relviagem.os where 1=1  ";
 	if(!empty($id_motorista)){
 			$select .= " and relviagem.id_motorista = $id_motorista ";
 	}
@@ -33,7 +36,9 @@ error_reporting(E_ALL);
 		
 		$select .= " and data between '$periodoini' and '$periodofim' ";
 	}
-	
+	if(!empty($cliente)){
+		$select .= " and viagem.cliente = '$cliente' ";
+	}
 	$select_query = mysqli_query($con,$select);
 	
 	$num_row = mysqli_num_rows($select_query);
@@ -78,7 +83,11 @@ error_reporting(E_ALL);
 				$fretec = $row['frete_c_pedagio'];
 				$fretes = $row['frete_s_pedagio'];
 				$comissao = $row['comissao'];
-				$datapgto = date("d/m/Y",strtotime($row['data_pagto']));
+				if(!empty($row['data_pagto'])){
+					$datapgto = date("d/m/Y",strtotime($row['data_pagto']));
+				}else{
+					$datapgto = "";
+				}
 				$totkmrodado = $totkmrodado + $row['km_rodado'];
 				$totlitros = $totlitros + $row['litros'];
 				$totvalorlitros = number_format($totvalorlitros + $valortotal, 2, '.', '');

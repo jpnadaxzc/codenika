@@ -1,6 +1,6 @@
 <?php 
    echo '<div style="display: flex;">
-   <div style="display: flex; background-color:black; text-align: center;  width: 100%; ">
+   <div style="display: flex; background-color:black; text-align: center;z-index:999;  width: 100%; ">
        <div>
        <a href="#"><img class="logo1" src="img/logo2.png" alt="logo_nika"/></a>
            <!--<img src="imagem/logo2.png"" alt="logo_nika"/>-->
@@ -20,15 +20,12 @@
                                     <li><a href="cadastroFuncionario.php">Usuario</a></li>
                                     <li><a href="Cadastro_cliente.php">Clientes</a></li>
                                     <li><a href="Cadastro_caminhao.php">Caminhão</a></li>
-                                    <li><a href="construcao.php">Carreta</a></li>
                                     <li><a href="cadastroMotorista.php">Motorista</a></li>
                                 </ul>
                             <li>
                                 <a href="#">Relatorios</a>
                                 <ul class="sub-menu">
                                     <li><a href="relatorio_viagem.php">Viagem</a></li>
-                                    <li><a href="relatorioMotorista.php">Motorista</a></li>
-                                    <li><a href="relatorioCliente.php">Cliente</a></li>
                                 </ul>
                             </li>
                         </ul>

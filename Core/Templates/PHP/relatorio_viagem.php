@@ -49,8 +49,10 @@
 						$num_row = mysqli_num_rows($select_mot_query);
 
 						if ($num_row > 0){
-						$row = mysqli_fetch_array($select_mot_query);
-							echo "<option value='{$row[0]}'>{$row[1]}</option>";
+							for($i3 = 0;$num_row > $i3; $i3++){
+								$row = mysqli_fetch_array($select_mot_query);
+								echo "<option value='{$row[0]}'>{$row[1]}</option>";
+							}
 						};
 					?>
 				</select>
@@ -65,8 +67,28 @@
 						$num_row_vei = mysqli_num_rows($select_vei_query);
 
 						if ($num_row_vei > 0){
-						$row_vei = mysqli_fetch_array($select_vei_query);
-							echo "<option value='{$row_vei['placa']}'>{$row_vei['placa']}</option>";
+							for($i2 = 0;$num_row_vei > $i2; $i2++){
+								$row_vei = mysqli_fetch_array($select_vei_query);
+								echo "<option value='{$row_vei['placa']}'>{$row_vei['placa']}</option>";
+							}
+						};
+					?>
+				</select>
+			</div>
+			<div class="col-md-4">
+				<label>Cliente</label>
+				<select id="clinte" class="select2_single js-example-basic-single form-control">
+					<option value="">TODOS</option>
+					<?php 
+						$select_cliente = 'select * from nika.clientes order by nome';
+						$select_cliente_query = mysqli_query($con,$select_cliente);
+						$num_row_cliente = mysqli_num_rows($select_cliente_query);
+
+						if ($num_row_cliente > 0){
+							for($i = 0;$num_row_cliente > $i; $i++){
+								$row_cliente = mysqli_fetch_array($select_cliente_query);
+								echo "<option value='{$row_cliente[0]}'>{$row_cliente[1]}</option>";
+							}
 						};
 					?>
 				</select>
@@ -116,23 +138,24 @@ function validabusca(){
 	var id_mot = $('#motorista').val();
 	var placa = $('#veiculo').val();
 	var periodo = $('#periodo').val();
+	var cliente = $('#clinte').val();
 	
-	if(id_mot == '' && placa == "" && periodo == ""){
+	if(id_mot == '' && placa == "" && periodo == "" && cliente == ''){
 		$("#table").html("<div class='alert alert-warning'><strong>OPS!</strong>Selecione algum filtro</div>");
 		return;
 	}else{
 		document.getElementById('alerta').style.display = "none";
-		busca(id_mot,placa,periodo);
+		busca(id_mot,placa,periodo,cliente);
 	}
 }
 
-function busca(id_mot,placa,periodo){
+function busca(id_mot,placa,periodo,cliente){
 	
 	
 	$.ajax({
 		type: "POST",
 		url: "pesquisaformulario.php",
-		data:{id_mot:id_mot,placa:placa,periodo:periodo},
+		data:{id_mot:id_mot,placa:placa,periodo:periodo,cliente:cliente},
 		success: function(html){
 			
 			$("#table").html(html);

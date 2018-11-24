@@ -12,9 +12,9 @@
         $query .= " and finalizada = 1 ";
     }
     if($final == 2){
-        $query .= " and finalizada = 0 ";
+        $query .= " and finalizada = 0 or finalizada = '' ";
     }
-                                       
+                                    
     $resqury = mysqli_query($con,$query);
     $numRow = mysqli_num_rows($resqury); 
     $table = "<table  id='table' class='table table-striped table-bordered dt-responsive nowrap' > 

@@ -9,7 +9,7 @@ try{
     $date = str_replace('/',"-",$date);
     $date = date('Y-m-d',strtotime($date));
     
-    $query = "insert into nika.viagem (cliente,motorista,caminhao,destino,data_saida) values ($cliente,$motorista,$caminhao,'$destino','$date')";
+    $query = "insert into nika.viagem (cliente,motorista,caminhao,destino,data_saida,finalizada) values ($cliente,$motorista,$caminhao,'$destino','$date',0)";
     $res_query = mysqli_query($con,$query);
   
     if($res_query){
