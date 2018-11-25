@@ -66,24 +66,6 @@ include("conexao.php");
 					<label>Decrição:</label><br>
 					<input type="text" clas="form-control" id="desc" >
 				</div>
-				<div class="col-md-6">
-					<label>Fornecedor:</label><br>
-					<select class="select2_single js-example-basic-single form-control" name="forn" id="forn">
-					<option></option>
-					<option value='1'>teste fornecedor</option>
-					<?php 
-						// $select_mot = 'select * from clientes';
-						// $select_mot_query = mysqli_query($con,$select_mot);
-						// $num_row = mysqli_num_rows($select_mot_query);
-
-						// if ($num_row > 0){
-						// $row = mysqli_fetch_array($select_mot_query);
-						// 	echo "<option value='{$row[0]}'>{$row[1]}</option>";
-						// };
-					?>
-				</select>
-					
-				</div>
 				<div class="col-md-3">
 					<label>Quantidade:</label><br>
 					<input type="text" clas="form-control somente-numero" id="qtd">
@@ -222,4 +204,6 @@ function qrcode(fileNema){
 			}
 		})
 }
+
+
 </script>

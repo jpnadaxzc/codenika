@@ -9,8 +9,8 @@ try{
     $forn = $_POST['forn'];
     $dia = date('Y-m-d');
     $horaEdata = date('Ymdhis');
-    $query = "insert into nika.estoque (valor,qtd,descricao,fornecedor,datacad,qrcode) values ($valor,$qtd,'$desc',$forn,'$dia','$desc2$horaEdata.png')";
-   
+    $query = "insert into nika.estoque (valor,qtd,descricao,fornecedor,datacad,qrcode) values ('$valor','$qtd','$desc','$forn','$dia','$desc2$horaEdata.png')";
+
     $res = mysqli_query($con,$query);
     if($produção){
         

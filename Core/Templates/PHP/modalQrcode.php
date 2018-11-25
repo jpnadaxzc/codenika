@@ -12,7 +12,21 @@ $img = "<img src='qrcode/$filename' style='width: 100%;'/>";
             </div>
             <div class="modal-body">
                 <?php echo $img; ?> 
+                <br>
+                <br>
+                <br>
+                <button class="btn-default btn" onclick="print('<?php echo $filename ?>')" >Imprimir</button>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
     </div>
 </div>
+<script>
+function print(img){
+	window.open("qrcodeprint.php?img="+img ,'_blank');
+    target = "_blank"
+    done = 1;
+}
+</script>
