@@ -65,11 +65,11 @@
 			</div><br>
 			<div class="row">
 				<div class="col-md-4">
-					<label>CET Nika</label>
+					<label>CTE Nika</label>
 					<input class="form-control" type="text" id="cetn"/>
 				</div>
 				<div class="col-md-4">
-					<label>CET Cliente</label>
+					<label>CTE Cliente</label>
 					<input class="form-control" type="text" id="cetc"/>
 				</div>
 				<div class="col-md-4">
@@ -81,7 +81,7 @@
 				<div class="col-md-4">
 					<label>Frete S/ Pedagio</label>
 					<input class="form-control" type="text" id="fretes"/>
-				</div><br>
+				</div>
 				<div class="col-md-4">
 					<label>Comissao em "%"</label>
 					<input class="form-control" type="text" id="comissao"/>

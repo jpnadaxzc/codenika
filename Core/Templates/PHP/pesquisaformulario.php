@@ -50,7 +50,7 @@ error_reporting(E_ALL);
 			<thead>
 				<tr> 
 					<th>Ordem</th>
-					<th>Data Abastecimento</th>
+					
 					<th>Km Rodado</th>
 					<th>Litros</th>
 					<th>Valor por Litros</th>
@@ -98,9 +98,7 @@ error_reporting(E_ALL);
 						<td style='text-align:center'>
 						{$row['id']}
 						</td>
-						<td style='text-align:center'>
-						$data_abastecimento
-						</td>
+						
 						<td style='text-align:center'>
 						{$row['km_rodado']}
 						</td>
@@ -164,7 +162,7 @@ error_reporting(E_ALL);
 			$table .= "	
 						<tr>
 							<td>TOTAL:</td>
-							<td style='text-align:center'>--</td>
+							
 							<td style='text-align:center'>$totkmrodado </td>
 							<td style='text-align:center'>$totlitros</td>
 							<td style='text-align:center'>--</td>

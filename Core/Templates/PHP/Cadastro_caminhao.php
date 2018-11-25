@@ -66,7 +66,7 @@
                 </div>    
                 <div class="col-md-4">
                     <label for="fullname">Chassis:</label><span style="color:red;">*</span><span id="msgmodelo" class="esconde color">&nbsp Campo Obrigatorio</span>
-                    <input class="form-control" type="text" id="chassis"/>
+                    <input class="form-control" type="text" id="chassis" maxlength="17"/>
                 </div>      
             </div>
         </form>
@@ -98,7 +98,7 @@
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">fecha</button>
+        <button type="button" class="btn btn-secondary" onclick="reload()" data-dismiss="modal">fecha</button>
         <button type="button" class="btn btn-primary" onclick="salvamarca()">Salva</button>
       </div>
     </div>
@@ -145,5 +145,9 @@ function salvacaminhao(){
 
         }
     })
+}
+
+function reload(){
+    location.reload();
 }
 </script>
