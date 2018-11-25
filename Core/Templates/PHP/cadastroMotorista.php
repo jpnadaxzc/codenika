@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="cest">CEP:</label><br>
-                    <input type="text" class="form-control" name="tcep" id="tcep" size="9" maxlength="9" placeholder="xxxxx-xxx"/>
+                    <input type="text" class="form-control" name="tcep" id="tcep" size="9" maxlength="9" />
                 </div>
                 <div class="col-md-4">
                     <label for="CadFunc-rua">Logradouro:</label><br>
@@ -181,10 +181,13 @@ function gravar(){
     }
     
     var nome = $("#nome").val();
-    var cpf = $("#cpf").val();
+    var cpf = $("#cpf").val().replace("-","");
+    cpf = cpf.replace(".","");
+    cpf = cpf.replace(".","");
+    cpf = cpf.replace(".","");
     var rg = $("#rg").val();
     var dat = $('#tnasc').val();
-    var cep = $('#tcep').val();
+    var cep = $('#tcep').val().replace("-","");
     var rua = $('#trua').val();
     var numero = $('#tnum').val();
     var comp = $('#tcomplemento').val();
@@ -218,7 +221,7 @@ jQuery(function () {
 $( "#tcep" ).change(function() {
     var caracteresDigitados = parseInt($(this).val().length);
     
-    if (caracteresDigitados == 8){
+    if (caracteresDigitados == 9){
         cep()
     }else{
 
@@ -227,7 +230,7 @@ $( "#tcep" ).change(function() {
 
 function cep(){ 
     
-    var cep = $('#tcep').val();
+    var cep = $('#tcep').val().replace("-","");
     
     $.ajax({
         
@@ -256,4 +259,11 @@ function cep(){
 function limpa(){
     location.reload();
 }
+$(document).ready(function(){cpf
+   
+      $('#tcep').mask('00000-000');
+      $('#cpf').mask('000.000.000-00');
+   
+});
+
 </script>

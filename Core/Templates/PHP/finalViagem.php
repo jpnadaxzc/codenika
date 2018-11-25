@@ -111,6 +111,7 @@
 <script src="Static/js/jquery.mask.min.js"></script>
 <script src="Static/js/bootstrap-datepicker.min.js"></script>
 <script src="Static/js/datepicker-pt-BR.js"></script>
+<script src="Static/js/jquery.maskMoney.min.js" type="text/javascript"></script>
 <script>
 	
 	jQuery(function () {
@@ -139,13 +140,16 @@
 		var km = $('#km').val();
 		var diesel = $('#diesel').val();
 		var valor = $('#valor').val().replace(',','.');
+		valor = valor.replace("R$:","");
 		var dtpagamento = $('#pagame').val();
 		var date = $('#date').val();
 		var romaneio = $('#romaneio').val();
 		var cetn = $('#cetn').val();
 		var cetc = $('#cetc').val();
 		var fretes = $('#fretes').val().replace(',','.');
+		fretes = fretes.replace("R$:","");
 		var fretec = $('#fretec').val().replace(',','.');
+		fretec = fretec.replace("R$:","");
 		var comissao = $('#comissao').val();
 		var id = <?php echo $_GET['id']; ?>;
 		var idmotorista = <?php echo $_GET['motoristaid']; ?>;
@@ -174,4 +178,22 @@
 	function voltar(){
 		window.location.href = "finalizaEntrega.php";
 	}
+	$(document).ready(function()
+{
+     $("#valor").maskMoney({
+         prefix: "R$:",
+         decimal: ",",
+         thousands: "."
+     });
+	 $("#fretec").maskMoney({
+         prefix: "R$:",
+         decimal: ",",
+         thousands: "."
+     });
+	 $("#fretes").maskMoney({
+         prefix: "R$:",
+         decimal: ",",
+         thousands: "."
+     });
+});
 </script>

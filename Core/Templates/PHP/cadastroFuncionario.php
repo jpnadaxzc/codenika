@@ -65,11 +65,11 @@
 					<div class="row">
 						<div class="col-md-4">
 							<label for="CadFunc-rg">RG: </label><br>
-							<input type="text"  class="form-control" name="trg" id="trg" size="8" maxlength="8" placeholder="xx.xxx.xxx-x"/>
+							<input type="text"  class="form-control" name="trg" id="trg" size="8" maxlength="8" />
 						</div>
 						<div class="col-md-4">
 							<label for="CadFunc-cpf">CPF:</label><br>
-							<input type="text" class="form-control"  name="tcpf" id="tcpf" size="11" maxlength="11" placeholder="xxx.xxx.xxx-xx"/>
+							<input type="text" class="form-control"  name="tcpf" id="tcpf" size="11" maxlength="11" />
 						</div>
 						<div class="col-md-4">
 							<label for="CadFunc-email">E-mail:</label><br>
@@ -88,7 +88,7 @@
 					<div class="row">
 						<div class="col-md-4">
 							<label for="cest">CEP:</label><br>
-							<input type="text" class="form-control" name="tcep" id="tcep" size="9" maxlength="9" placeholder="xxxxx-xxx"/>
+							<input type="text" class="form-control" name="tcep" id="tcep" size="9" maxlength="9" />
 						</div>
 						<div class="col-md-4">
 							<label for="CadFunc-rua">Logradouro:</label><br>
@@ -251,9 +251,11 @@
 		var bairro = $('#tbairro').val();
 		var cidade = $('#tcidade').val();
 		var estado = $('#test').val();
-		var cep = $('#tcep').val();
-		
-		var cpf = $('#tcpf').val();
+		var cep = $('#tcep').val().replace("-","");
+		var cpf = $('#tcpf').val().replace("-","");
+		cpf = cpf.replace(".","");
+		cpf = cpf.replace(".","");
+		cpf = cpf.replace(".","");
 		var login = $('#tlogin').val();
 		var senha = $('#tsenha').val();
 		var data = {
@@ -289,7 +291,7 @@
 	$( "#tcep" ).change(function() {
 		var caracteresDigitados = parseInt($(this).val().length);
 		
-		if (caracteresDigitados == 8){
+		if (caracteresDigitados == 9){
 			cep()
 		}else{
 
@@ -297,7 +299,7 @@
 	})
 	function cep(){ 
 		
-		var cep = $('#tcep').val();
+		var cep = $('#tcep').val().replace("-","");
 		
 		$.ajax({
 			
@@ -346,5 +348,10 @@
            });
 	});
 
-	
+$(document).ready(function(){
+   
+   $('#tcep').mask('00000-000');
+   $('#tcpf').mask('000.000.000-00');
+
+});
 </script>
